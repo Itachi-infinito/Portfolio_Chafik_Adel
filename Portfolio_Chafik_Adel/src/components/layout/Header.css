@@ -110,3 +110,23 @@
 
   .nav__link { font-size: 1.2rem; }
 }
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 4vw;
+  }
+  
+  .nav--open {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .nav--open .nav__link {
+    font-size: 1.4rem;
+  }
+
+  .nav--open .nav__cta {
+    font-size: 1.1rem !important;
+    padding: 0.7rem 2rem;
+  }
+}
