@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Home.css'
 
 const phrases = [
@@ -76,9 +77,9 @@ const Home = () => {
             >
               📄 Télécharger CV
             </a>
-            <a href="/contact" className="btn btn--ghost">
+            <Link to="/contact" className="btn btn--ghost">
               ✉️ Me contacter
-            </a>
+            </Link>
           </div>
 
           <div className="hero__socials">
