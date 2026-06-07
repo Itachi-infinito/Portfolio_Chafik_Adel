@@ -12,7 +12,7 @@ const projects = [
     links: [
       { label: "App Store", icon: "🍎", url: "#" },
       { label: "Google Play", icon: "▶️", url: "#" },
-      { label: "GitHub", icon: "⚡", url: "https://github.com/Itachi-infinito" },
+      { label: "GitHub", icon: "⚡", url: "https://github.com/Itachi-infinito/SparkWork-Flutter" },
     ]
   },
   {

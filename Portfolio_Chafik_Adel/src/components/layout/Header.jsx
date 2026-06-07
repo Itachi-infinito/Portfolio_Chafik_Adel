@@ -7,12 +7,15 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
-  // Ferme le menu mobile à chaque changement de page
   useEffect(() => {
     setMenuOpen(false)
   }, [location])
 
-  // Détecte le scroll pour changer le style du header
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll)

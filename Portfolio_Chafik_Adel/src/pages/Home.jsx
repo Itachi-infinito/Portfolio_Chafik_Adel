@@ -69,6 +69,13 @@ const Home = () => {
             <a href="https://github.com/Itachi-infinito" target="_blank" rel="noreferrer" className="btn btn--primary">
               ⚡ Voir GitHub
             </a>
+            <a
+              href={`${import.meta.env.BASE_URL}CV_Adel_Chafik.pdf`}
+              download="CV_Adel_Chafik.pdf"
+              className="btn btn--download"
+            >
+              📄 Télécharger CV
+            </a>
             <a href="/contact" className="btn btn--ghost">
               ✉️ Me contacter
             </a>

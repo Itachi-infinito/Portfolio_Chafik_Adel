@@ -53,6 +53,16 @@ const About = () => {
                 <span className="tag">🎂 17/02/2002</span>
                 <span className="tag">🚗 Permis B</span>
               </div>
+
+              <div className="about-cv">
+                <a
+                  href={`${import.meta.env.BASE_URL}CV_Adel_Chafik.pdf`}
+                  download="CV_Adel_Chafik.pdf"
+                  className="btn btn--download"
+                >
+                  📄 Télécharger mon CV
+                </a>
+              </div>
             </div>
 
             <div className="about-info">
