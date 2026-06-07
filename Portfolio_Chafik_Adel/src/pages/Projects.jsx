@@ -16,7 +16,8 @@ const Projects = () => {
           {projects.map((project, i) => (
             <div
               key={i}
-              className={`project-card ${project.featured ? 'project-card--featured' : ''}`}
+              className={`project-card ${project.featured ? 'project-card--featured' : ''} reveal`}
+              data-delay={i * 80}
             >
               {/* Thumb */}
               <div className={`project-card__thumb ${project.featured ? 'project-card__thumb--featured' : ''}`}>

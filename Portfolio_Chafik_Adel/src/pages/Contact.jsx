@@ -46,7 +46,7 @@ const Contact = () => {
       </section>
 
       <section className="contact-section">
-        <div className="contact-grid">
+        <div className="contact-grid reveal">
           <div className="contact-info">
             <p className="contact-info__desc">
               Disponible pour des missions freelance, collaborations sur des projets

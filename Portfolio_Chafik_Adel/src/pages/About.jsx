@@ -17,7 +17,7 @@ const About = () => {
           <h1 className="section-title">À propos <span>de moi</span></h1>
           <div className="divider" />
 
-          <div className="about-grid">
+          <div className="about-grid reveal">
             <div className="about-text">
               <p>
                 Ingénieur en électronique diplômé du{' '}
@@ -113,8 +113,8 @@ const About = () => {
         <div className="divider" />
 
         <div className="skills-grid">
-          {skills.map((group) => (
-            <div key={group.category} className="skill-card">
+          {skills.map((group, i) => (
+            <div key={group.category} className="skill-card reveal" data-delay={i * 80}>
               <h3 className="skill-card__title">{group.category}</h3>
               <div className="skill-badges">
                 {group.items.map(item => (

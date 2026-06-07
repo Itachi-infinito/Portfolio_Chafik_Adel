@@ -104,19 +104,19 @@ const Home = () => {
       {/* STATS */}
       <section className="stats">
         <div className="stats__grid">
-          <div className="stat-card">
+          <div className="stat-card reveal" data-delay="0">
             <span className="stat-card__number">2</span>
             <span className="stat-card__label">Stages industriels</span>
           </div>
-          <div className="stat-card">
+          <div className="stat-card reveal" data-delay="80">
             <span className="stat-card__number">5+</span>
             <span className="stat-card__label">Projets réalisés</span>
           </div>
-          <div className="stat-card">
+          <div className="stat-card reveal" data-delay="160">
             <span className="stat-card__number">Master</span>
             <span className="stat-card__label">ECAM Brussels</span>
           </div>
-          <div className="stat-card">
+          <div className="stat-card reveal" data-delay="240">
             <span className="stat-card__number">🇧🇪</span>
             <span className="stat-card__label">Nivelles, Belgique</span>
           </div>

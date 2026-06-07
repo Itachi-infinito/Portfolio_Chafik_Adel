@@ -45,7 +45,7 @@ const ProjectDetail = () => {
 
       <div className="detail-body">
         {/* Description */}
-        <section className="detail-section">
+        <section className="detail-section reveal" data-delay="0">
           <h2 className="detail-section__title">Description</h2>
           <div className="detail-description">
             {project.fullDescription.split('\n\n').map((para, i) => (
@@ -55,7 +55,7 @@ const ProjectDetail = () => {
         </section>
 
         {/* Features */}
-        <section className="detail-section">
+        <section className="detail-section reveal" data-delay="100">
           <h2 className="detail-section__title">Fonctionnalités clés</h2>
           <ul className="detail-features">
             {project.features.map((f, i) => (

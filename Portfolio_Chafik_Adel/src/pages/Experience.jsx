@@ -89,7 +89,7 @@ const Experience = () => {
       <section className="exp-section">
         <div className="timeline">
           {experiences.map((exp, i) => (
-            <div key={i} className="timeline-item">
+            <div key={i} className="timeline-item reveal" data-delay={i * 120}>
               <div
                 className="timeline-dot"
                 style={{ background: exp.color, boxShadow: `0 0 0 4px ${exp.color}33` }}
@@ -123,14 +123,14 @@ const Experience = () => {
       </section>
 
       {/* EXPÉRIENCES ACADÉMIQUES */}
-      <section className="academic-section">
+      <section className="academic-section reveal">
         <p className="section-label">Formation pratique</p>
         <h2 className="section-title">Projets <span>académiques</span></h2>
         <div className="divider" />
 
         <div className="academic-grid">
           {academics.map((ac, i) => (
-            <div key={i} className="academic-card">
+            <div key={i} className="academic-card reveal" data-delay={i * 100}>
               <h3 className="academic-card__title">{ac.title}</h3>
               <p className="academic-card__school">{ac.school}</p>
               <ul className="academic-card__missions">
