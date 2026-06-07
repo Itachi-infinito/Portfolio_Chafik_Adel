@@ -98,9 +98,8 @@
     display: flex;
     position: fixed;
     inset: 68px 0 0 0;
-    z-index: 99;
-    background: rgba(8, 8, 14, 0.98);
-    backdrop-filter: blur(24px);
+    z-index: 9999;
+    background: #08080e;
     flex-direction: column;
     align-items: center;
     justify-content: center;
