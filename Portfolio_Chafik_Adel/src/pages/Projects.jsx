@@ -20,8 +20,19 @@ const Projects = () => {
               data-delay={i * 80}
             >
               {/* Thumb */}
-              <div className={`project-card__thumb ${project.featured ? 'project-card__thumb--featured' : ''}`}>
-                <span className="project-card__emoji">{project.emoji}</span>
+              <div
+                className={`project-card__thumb ${project.featured ? 'project-card__thumb--featured' : ''} ${project.coverImage && project.showCoverInCard !== false ? 'project-card__thumb--image' : ''}`}
+              >
+                {project.coverImage && project.showCoverInCard !== false ? (
+                  <img
+                    className="project-card__cover"
+                    src={`${import.meta.env.BASE_URL}${project.coverImage}`}
+                    alt={project.title}
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="project-card__emoji">{project.emoji}</span>
+                )}
                 <div className="project-card__badges-top">
                   {project.badges.map((b, j) => (
                     <span key={j} className="badge-top">{b}</span>
@@ -53,6 +64,9 @@ const Projects = () => {
                           target="_blank"
                           rel="noreferrer"
                           className="project-link"
+                          style={link.url.startsWith('images/') ? {
+                            '--preview-image': `url(${import.meta.env.BASE_URL}${link.url})`,
+                          } : undefined}
                         >
                           {link.icon} {link.label}
                         </a>
