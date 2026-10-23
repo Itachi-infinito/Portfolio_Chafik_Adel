@@ -29,7 +29,7 @@ const experiences = [
     ]
   },
   {
-    period: "janv. 2025 — févr. 2025",
+    period: "janv. 2023 — avr. 2023",
     role: "Stagiaire Ingénieur Hardware",
     company: "CISSOID",
     location: "Louvain-La-Neuve",
