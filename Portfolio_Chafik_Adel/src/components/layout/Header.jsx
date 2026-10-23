@@ -30,11 +30,11 @@ const Header = () => {
   ]
 
   return (
-    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
+    <header className={`header ${scrolled ? 'header--scrolled' : ''} ${menuOpen ? 'header--menu-open' : ''}`}>
       <NavLink to="/" className="logo">AC.</NavLink>
 
       {/* Navigation desktop */}
-      <nav className={`nav ${menuOpen ? 'nav--open' : ''}`}>
+      <nav id="primary-navigation" className={`nav ${menuOpen ? 'nav--open' : ''}`}>
         {links.map(link => (
           <NavLink
             key={link.to}
@@ -54,7 +54,9 @@ const Header = () => {
       <button
         className={`burger ${menuOpen ? 'burger--open' : ''}`}
         onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Menu"
+        aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+        aria-expanded={menuOpen}
+        aria-controls="primary-navigation"
       >
         <span /><span /><span />
       </button>

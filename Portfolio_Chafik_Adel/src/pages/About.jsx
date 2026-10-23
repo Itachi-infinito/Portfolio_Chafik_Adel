@@ -43,7 +43,7 @@ const About = () => {
               <p>
                 Curieux et entrepreneur dans l'âme, j'ai également lancé{' '}
                 <strong>SparkWork</strong>, une application mobile de recrutement
-                disponible sur iOS et Android.
+                en cours de publication sur iOS et Android.
               </p>
 
               <div className="about-tags">
@@ -96,8 +96,8 @@ const About = () => {
                     <span className="mini-stat__label">Clients industriels</span>
                   </div>
                   <div className="mini-stat">
-                    <span className="mini-stat__num">2</span>
-                    <span className="mini-stat__label">Apps publiées</span>
+                    <span className="mini-stat__num">1</span>
+                    <span className="mini-stat__label">App en cours de publication</span>
                   </div>
                 </div>
               </div>

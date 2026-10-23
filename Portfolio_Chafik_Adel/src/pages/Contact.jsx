@@ -67,11 +67,11 @@ const Contact = () => {
                   <span>github.com/Itachi-infinito</span>
                 </div>
               </a>
-              <a href="https://www.linkedin.com/in/adelchafik-b47834215/" target="_blank" rel="noreferrer" className="contact-link">
+              <a href="https://www.linkedin.com/in/adel-chafik-b47834215/" target="_blank" rel="noreferrer" className="contact-link">
                 <div className="contact-link__icon">💼</div>
                 <div className="contact-link__text">
                   <small>LinkedIn</small>
-                  <span>linkedin.com/in/adelchafik</span>
+                  <span>linkedin.com/in/adel-chafik</span>
                 </div>
               </a>
               <div className="contact-link">
