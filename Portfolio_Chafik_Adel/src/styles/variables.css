@@ -29,7 +29,6 @@
   --color-accent-2:         var(--color-accent);
   --color-accent-soft-text: var(--color-accent);
   --color-success:          var(--color-accent);
-  --color-danger:           var(--color-accent);
 
   /* Typographie */
   --font-sans: 'IBM Plex Sans', system-ui, sans-serif;

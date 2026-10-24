@@ -2,10 +2,25 @@ import { useState } from 'react'
 import './Contact.css'
 
 const FORMSPREE_ID = 'xwvjlznn'
+const EMAIL = 'adelchafik8@gmail.com'
+
+const coordinates = [
+  { param: 'Email', value: EMAIL, href: `mailto:${EMAIL}` },
+  {
+    param: 'LinkedIn',
+    value: 'linkedin.com/in/adel-chafik-b47834215 ↗', // espace insécable : la flèche reste avec l'adresse
+    href: 'https://www.linkedin.com/in/adel-chafik-b47834215/',
+    external: true,
+  },
+  { param: 'Téléphone', value: '+32 499 10 16 63', href: 'tel:+32499101663' },
+  { param: 'Localisation', value: 'Nivelles, Belgique' },
+]
+
+const EMPTY_FORM = { prenom: '', nom: '', email: '', sujet: '', message: '' }
 
 const Contact = () => {
   const [status, setStatus] = useState('idle')
-  const [form, setForm] = useState({ prenom: '', nom: '', email: '', sujet: '', message: '' })
+  const [form, setForm] = useState(EMPTY_FORM)
 
   const handleChange = (e) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -28,7 +43,7 @@ const Contact = () => {
       })
       if (res.ok) {
         setStatus('success')
-        setForm({ prenom: '', nom: '', email: '', sujet: '', message: '' })
+        setForm(EMPTY_FORM)
       } else {
         setStatus('error')
       }
@@ -40,121 +55,109 @@ const Contact = () => {
   return (
     <main className="page contact-page">
       <section className="contact-header">
-        <p className="section-label">Travaillons ensemble</p>
-        <h1 className="section-title">Me <span>contacter</span></h1>
+        <p className="section-label">Coordonnées et formulaire</p>
+        <h1 className="section-title">Contact</h1>
         <div className="divider" />
       </section>
 
       <section className="contact-section">
-        <div className="contact-grid reveal">
-          <div className="contact-info">
-            <p className="contact-info__desc">
-              Disponible pour des missions freelance, collaborations sur des projets
-              industriels ou innovants, ou simplement pour échanger. N'hésitez pas !
-            </p>
-            <div className="contact-links">
-              <a href="mailto:adelchafik8@gmail.com" className="contact-link">
-                <div className="contact-link__icon">✉️</div>
-                <div className="contact-link__text">
-                  <small>Email</small>
-                  <span>adelchafik8@gmail.com</span>
-                </div>
-              </a>
-              <a href="https://github.com/Itachi-infinito" target="_blank" rel="noreferrer" className="contact-link">
-                <div className="contact-link__icon">⚡</div>
-                <div className="contact-link__text">
-                  <small>GitHub</small>
-                  <span>github.com/Itachi-infinito</span>
-                </div>
-              </a>
-              <a href="https://www.linkedin.com/in/adel-chafik-b47834215/" target="_blank" rel="noreferrer" className="contact-link">
-                <div className="contact-link__icon">💼</div>
-                <div className="contact-link__text">
-                  <small>LinkedIn</small>
-                  <span>linkedin.com/in/adel-chafik</span>
-                </div>
-              </a>
-              <div className="contact-link">
-                <div className="contact-link__icon">📍</div>
-                <div className="contact-link__text">
-                  <small>Localisation</small>
-                  <span>Nivelles, Belgique</span>
-                </div>
+        <table className="specs contact-coordinates">
+          <caption>Coordonnées</caption>
+          <tbody>
+            {coordinates.map(row => (
+              <tr key={row.param}>
+                <th scope="row">{row.param}</th>
+                <td>
+                  {row.href ? (
+                    <a
+                      href={row.href}
+                      className="contact-link"
+                      {...(row.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                    >
+                      {row.value}
+                    </a>
+                  ) : (
+                    <span className="specs__value">{row.value}</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div className="contact-form-wrap">
+          <h2 className="contact-form__title">Message</h2>
+
+          <div aria-live="polite">
+            {status === 'success' && (
+              <div className="contact-success">
+                <p>Message envoyé. Je vous réponds par email.</p>
+                <button type="button" className="btn btn--ghost" onClick={() => setStatus('idle')}>
+                  Envoyer un autre message
+                </button>
               </div>
-              <a href="tel:+32499101663" className="contact-link">
-                <div className="contact-link__icon">📞</div>
-                <div className="contact-link__text">
-                  <small>Téléphone</small>
-                  <span>+32 499 10 16 63</span>
-                </div>
-              </a>
-            </div>
+            )}
+            {status === 'error' && (
+              <p className="contact-error">
+                Échec de l'envoi. Réessayez ou écrivez à <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+              </p>
+            )}
           </div>
 
-          {status === 'success' ? (
-            <div className="contact-success">
-              <span className="contact-success__icon">✅</span>
-              <h3>Message envoyé !</h3>
-              <p>Merci pour votre message. Je vous répondrai dans les plus brefs délais.</p>
-              <button className="contact-form__btn" onClick={() => setStatus('idle')}>
-                Envoyer un autre message
-              </button>
-            </div>
-          ) : (
+          {status !== 'success' && (
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="contact-form__row">
                 <div className="contact-form__group">
-                  <label className="contact-form__label">Prénom</label>
+                  <label htmlFor="contact-prenom" className="contact-form__label">Prénom</label>
                   <input
-                    type="text" name="prenom" className="contact-form__input"
-                    placeholder="Jean" required
+                    id="contact-prenom" type="text" name="prenom" className="contact-form__input"
+                    autoComplete="given-name" required
                     value={form.prenom} onChange={handleChange}
                   />
                 </div>
                 <div className="contact-form__group">
-                  <label className="contact-form__label">Nom</label>
+                  <label htmlFor="contact-nom" className="contact-form__label">Nom</label>
                   <input
-                    type="text" name="nom" className="contact-form__input"
-                    placeholder="Dupont" required
+                    id="contact-nom" type="text" name="nom" className="contact-form__input"
+                    autoComplete="family-name" required
                     value={form.nom} onChange={handleChange}
                   />
                 </div>
               </div>
 
               <div className="contact-form__group">
-                <label className="contact-form__label">Email</label>
+                <label htmlFor="contact-email" className="contact-form__label">Email</label>
                 <input
-                  type="email" name="email" className="contact-form__input"
-                  placeholder="jean@exemple.com" required
+                  id="contact-email" type="email" name="email" className="contact-form__input"
+                  autoComplete="email" required
                   value={form.email} onChange={handleChange}
                 />
               </div>
 
               <div className="contact-form__group">
-                <label className="contact-form__label">Sujet</label>
+                <label htmlFor="contact-sujet" className="contact-form__label">
+                  Sujet <span className="contact-form__optional">(facultatif)</span>
+                </label>
                 <input
-                  type="text" name="sujet" className="contact-form__input"
-                  placeholder="Collaboration, mission..."
+                  id="contact-sujet" type="text" name="sujet" className="contact-form__input"
                   value={form.sujet} onChange={handleChange}
                 />
               </div>
 
               <div className="contact-form__group">
-                <label className="contact-form__label">Message</label>
+                <label htmlFor="contact-message" className="contact-form__label">Message</label>
                 <textarea
-                  name="message" className="contact-form__textarea"
-                  placeholder="Décrivez votre projet ou votre demande…" required
+                  id="contact-message" name="message" className="contact-form__input contact-form__textarea"
+                  required
                   value={form.message} onChange={handleChange}
                 />
               </div>
 
-              {status === 'error' && (
-                <p className="contact-error">Une erreur est survenue. Réessayez ou écrivez directement à adelchafik8@gmail.com</p>
-              )}
-
-              <button type="submit" className="contact-form__btn" disabled={status === 'loading'}>
-                {status === 'loading' ? '⏳ Envoi en cours…' : '✉️ Envoyer le message'}
-              </button>
+              <div>
+                <button type="submit" className="btn btn--primary" disabled={status === 'loading'}>
+                  {status === 'loading' ? 'Envoi en cours…' : 'Envoyer le message'}
+                </button>
+              </div>
             </form>
           )}
         </div>
