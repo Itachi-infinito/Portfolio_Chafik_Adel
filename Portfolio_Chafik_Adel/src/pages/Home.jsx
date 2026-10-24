@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
-import { projects } from '../data/projects'
+import { projects, PCB_SLUGS } from '../data/projects'
 import './Home.css'
 
 const BASE = import.meta.env.BASE_URL
 
 // Projets qui comportent une carte PCB conçue (titres lus dans projects.js)
-const PCB_SLUGS = ['usb-charger', 'copperwatch', 'esp32-iot', 'rpi-pico-iot']
 const pcbProjects = projects.filter(p => PCB_SLUGS.includes(p.slug))
 
 const specs = [
