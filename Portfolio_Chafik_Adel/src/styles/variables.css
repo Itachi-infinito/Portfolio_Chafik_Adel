@@ -1,18 +1,39 @@
+/*
+ * Source unique des tokens du site.
+ * Aucune couleur en dur ailleurs : les teintes transparentes sont dérivées
+ * avec color-mix(in srgb, var(--color-…) X%, transparent).
+ * Valeurs actuelles conservées — remplacées par la palette Datasheet à l'étape 2.
+ */
 :root {
-  /* Colors */
-  --bg:        #08080e;
-  --bg2:       #0d0d18;
-  --surface:   #12121f;
-  --surface2:  #1a1a2e;
-  --border:    rgba(255,255,255,0.06);
-  --border2:   rgba(255,255,255,0.12);
-  --text:      #e8e6f0;
-  --muted:     #7a7890;
-  --accent1:   #5b4ef8;
-  --accent2:   #8b5cf6;
-  --accent3:   #06d6a0;
+  /* Couleurs — neutres */
+  --color-bg:          #08080e;
+  --color-bg-alt:      #0d0d18;
+  --color-surface:     #12121f;
+  --color-surface-alt: #1a1a2e;
+  --color-border:        rgba(255,255,255,0.06);
+  --color-border-strong: rgba(255,255,255,0.12);
+  --color-text:        #e8e6f0;
+  --color-text-muted:  #7a7890;
+  --color-white:       #fff;
+  --color-black:       #000;
+  --color-on-accent:   #fff;
 
-  /* Typography */
+  /* Couleurs — accent et états */
+  --color-accent:           #5b4ef8;
+  --color-accent-2:         #8b5cf6;
+  --color-accent-3:         #c084fc;
+  --color-accent-soft-text: #a78bfa;
+  --color-success:          #06d6a0;
+  --color-success-dark:     #059669;
+  --color-danger:           #f87171;
+
+  /* Décors de l'ancienne charte (à supprimer à l'étape 2) */
+  --thumb-gradient:          linear-gradient(135deg, #1a0533, #0d001f, #001a33);
+  --thumb-gradient-featured: linear-gradient(135deg, #1a0533, #0d001f, #001533);
+  --thumb-overlay:           linear-gradient(90deg, rgba(9, 4, 25, 0.55), rgba(9, 4, 25, 0.12));
+  --lightbox-bg:             rgba(4, 3, 12, 0.92);
+
+  /* Typographie */
   --font-head: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 

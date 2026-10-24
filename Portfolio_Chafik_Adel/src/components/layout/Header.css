@@ -7,14 +7,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(8,8,14,0.7);
+  background: color-mix(in srgb, var(--color-bg) 70%, transparent);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
   transition: background var(--transition);
 }
 
 .header--scrolled {
-  background: rgba(8,8,14,0.95);
+  background: color-mix(in srgb, var(--color-bg) 95%, transparent);
 }
 
 /* Logo */
@@ -22,7 +22,7 @@
   font-family: var(--font-head);
   font-weight: 800;
   font-size: 1.3rem;
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -40,21 +40,21 @@
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--color-text-muted);
   transition: color var(--transition);
 }
 
 .nav__link:hover,
 .nav__link--active {
-  color: var(--text);
+  color: var(--color-text);
 }
 
 /* Bouton Contact */
 .nav__cta {
   padding: 0.45rem 1.2rem;
   border-radius: 50px;
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
-  color: #fff;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  color: var(--color-on-accent);
   font-size: 0.85rem;
   font-weight: 600;
   transition: opacity var(--transition), transform var(--transition);
@@ -80,7 +80,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--text);
+  background: var(--color-text);
   border-radius: 2px;
   transition: var(--transition);
 }
@@ -95,7 +95,7 @@
   .burger { display: flex; }
 
   .header--menu-open {
-    background: #08080e;
+    background: var(--color-bg);
     backdrop-filter: none;
   }
 
@@ -107,7 +107,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    background: #08080e;
+    background: var(--color-bg);
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;

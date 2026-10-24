@@ -7,7 +7,7 @@ const experiences = [
     company: "DVC",
     location: "Belgique",
     type: "CDI",
-    color: "#06d6a0",
+    tone: "var(--color-success)",
     missions: [
       "Réparation et diagnostic de cartes électroniques industrielles",
       "Conception de cartes électroniques PCB",
@@ -21,7 +21,7 @@ const experiences = [
     company: "Thales Alenia Space",
     location: "Belgique",
     type: "Stage",
-    color: "#5b4ef8",
+    tone: "var(--color-accent)",
     missions: [
       "Stage dans le domaine spatial — projet confidentiel",
       "Conception et développement hardware dans un environnement industriel exigeant",
@@ -34,7 +34,7 @@ const experiences = [
     company: "CISSOID",
     location: "Louvain-La-Neuve",
     type: "Stage",
-    color: "#8b5cf6",
+    tone: "var(--color-accent-2)",
     missions: [
       "Développement de plans de test pour composants MOSFETs haute performance",
       "Conception et amélioration d'un PCB sous Altium Designer",
@@ -92,7 +92,7 @@ const Experience = () => {
             <div key={i} className="timeline-item reveal" data-delay={i * 120}>
               <div
                 className="timeline-dot"
-                style={{ background: exp.color, boxShadow: `0 0 0 4px ${exp.color}33` }}
+                style={{ '--tone': exp.tone }}
               />
               <div className="timeline-card">
                 <div className="timeline-card__header">
@@ -106,7 +106,7 @@ const Experience = () => {
                   </div>
                   <span
                     className="timeline-card__badge"
-                    style={{ color: exp.color, borderColor: `${exp.color}44`, background: `${exp.color}11` }}
+                    style={{ '--tone': exp.tone }}
                   >
                     {exp.type}
                   </span>

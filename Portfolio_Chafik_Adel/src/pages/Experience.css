@@ -5,7 +5,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #5b4ef8;
+  color: var(--color-accent);
   margin-bottom: 0.8rem;
 }
 .section-title {
@@ -17,14 +17,14 @@
   margin-bottom: 1.2rem;
 }
 .section-title span {
-  background: linear-gradient(135deg, #5b4ef8, #8b5cf6);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .divider {
   width: 48px; height: 3px;
-  background: linear-gradient(90deg, #5b4ef8, #8b5cf6);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
   border-radius: 4px;
   margin-bottom: 3rem;
 }
@@ -49,7 +49,7 @@
   position: absolute;
   left: 0; top: 8px; bottom: 8px;
   width: 2px;
-  background: linear-gradient(to bottom, #5b4ef8, #8b5cf6, transparent);
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-2), transparent);
   border-radius: 2px;
 }
 
@@ -64,17 +64,19 @@
   top: 8px;
   width: 13px; height: 13px;
   border-radius: 50%;
+  background: var(--tone);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--tone) 20%, transparent);
 }
 
 .timeline-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
   padding: 1.8rem;
   transition: border-color 0.3s, transform 0.3s;
 }
 .timeline-card:hover {
-  border-color: rgba(91,78,248,0.35);
+  border-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
   transform: translateX(6px);
 }
 
@@ -91,7 +93,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #5b4ef8;
+  color: var(--color-accent);
   margin-bottom: 0.3rem;
 }
 
@@ -104,7 +106,7 @@
 
 .timeline-card__company {
   font-size: 0.95rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .timeline-card__location {
@@ -116,7 +118,9 @@
   border-radius: 50px;
   font-size: 0.78rem;
   font-weight: 600;
-  border: 1px solid;
+  border: 1px solid color-mix(in srgb, var(--tone) 26.67%, transparent);
+  background: color-mix(in srgb, var(--tone) 6.67%, transparent);
+  color: var(--tone);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -129,7 +133,7 @@
 }
 .timeline-card__missions li {
   font-size: 0.92rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   padding-left: 1.2rem;
   position: relative;
   line-height: 1.6;
@@ -138,14 +142,14 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #5b4ef8;
+  color: var(--color-accent);
   font-size: 0.85rem;
 }
 
 /* ACADÉMIQUE */
 .academic-section {
   padding: 60px 5vw 100px;
-  background: var(--bg2);
+  background: var(--color-bg-alt);
 }
 
 .academic-grid {
@@ -155,14 +159,14 @@
 }
 
 .academic-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
   padding: 1.8rem;
   transition: border-color 0.3s, transform 0.3s;
 }
 .academic-card:hover {
-  border-color: rgba(91,78,248,0.35);
+  border-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
   transform: translateY(-4px);
 }
 
@@ -175,7 +179,7 @@
 
 .academic-card__school {
   font-size: 0.82rem;
-  color: #5b4ef8;
+  color: var(--color-accent);
   font-weight: 500;
   margin-bottom: 1rem;
 }
@@ -188,7 +192,7 @@
 }
 .academic-card__missions li {
   font-size: 0.88rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
   padding-left: 1.1rem;
   position: relative;
   line-height: 1.6;
@@ -197,7 +201,7 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #8b5cf6;
+  color: var(--color-accent-2);
   font-size: 0.8rem;
 }
 
