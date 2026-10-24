@@ -1,0 +1,3 @@
+# Dépendances et builds, à tous les niveaux du dépôt
+node_modules/
+dist/
