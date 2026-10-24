@@ -3,7 +3,7 @@
   top: 0; left: 0; right: 0;
   z-index: 1000;
   height: var(--header-h);
-  padding: 0 5vw;
+  padding: 0 var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -136,11 +136,5 @@
   .nav__cta {
     font-size: 1.1rem;
     padding: 0.65rem 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 0 4vw;
   }
 }

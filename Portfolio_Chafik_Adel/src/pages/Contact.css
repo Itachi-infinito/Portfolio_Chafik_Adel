@@ -1,5 +1,5 @@
-.contact-header { padding: 80px 5vw 40px; }
-.contact-section { padding: 0 5vw 100px; }
+.contact-header { padding: 80px var(--gutter) 40px; }
+.contact-section { padding: 0 var(--gutter) 100px; }
 
 .contact-grid {
   display: grid;

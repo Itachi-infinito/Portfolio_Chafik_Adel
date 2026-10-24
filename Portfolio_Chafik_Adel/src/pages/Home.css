@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 100px 5vw 60px;
+  padding: 100px var(--gutter) 60px;
   position: relative;
   overflow: hidden;
 }
@@ -148,7 +148,7 @@
 
 /* STATS */
 .stats {
-  padding: 60px 5vw;
+  padding: 60px var(--gutter);
   background: var(--color-bg-alt);
 }
 
@@ -187,4 +187,14 @@
 @media (max-width: 768px) {
   .stats__grid { grid-template-columns: 1fr 1fr; }
   .hero__actions { flex-direction: column; }
+}
+/* Reproduit l'ancien rendu ≤ 480px (orbes plafonnées à la largeur d'écran)
+   — à revoir à l'étape 2. */
+@media (max-width: 480px) {
+  .hero__orb { max-width: 100vw; }
+}
+
+/* Sous 375px, deux cartes côte à côte ne tiennent pas (« Master ») */
+@media (max-width: 374px) {
+  .stats__grid { grid-template-columns: 1fr; }
 }

@@ -1,5 +1,5 @@
 /* ABOUT HERO */
-.about-hero { padding: 80px 5vw 60px; }
+.about-hero { padding: 80px var(--gutter) 60px; }
 
 .about-grid {
   display: grid;
@@ -94,13 +94,13 @@
 
 /* SKILLS */
 .skills-section {
-  padding: 60px 5vw 100px;
+  padding: 60px var(--gutter) 100px;
   background: var(--color-bg-alt);
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
   gap: 1.2rem;
 }
 

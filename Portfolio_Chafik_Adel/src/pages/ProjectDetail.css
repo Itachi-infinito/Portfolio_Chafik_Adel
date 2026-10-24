@@ -24,7 +24,7 @@
 /* Hero */
 .detail-hero {
   position: relative;
-  padding: 3rem 5vw 3rem;
+  padding: 3rem var(--gutter) 3rem;
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
 }
@@ -175,7 +175,7 @@
 /* Gallery */
 .detail-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -346,4 +346,11 @@
     padding: 2rem 4vw;
     gap: 2.5rem;
   }
+}
+
+/* Reproduit l'ancien rendu ≤ 480px (marge de section en double, orbes
+   plafonnées à la largeur d'écran) — à revoir à l'étape 2. */
+@media (max-width: 480px) {
+  .detail-section { padding-inline: var(--gutter); overflow-x: hidden; }
+  .detail-hero__orb { max-width: 100vw; }
 }

@@ -1,11 +1,11 @@
 /* HEADER */
 .exp-header {
-  padding: 80px 5vw 40px;
+  padding: 80px var(--gutter) 40px;
 }
 
 /* TIMELINE */
 .exp-section {
-  padding: 0 5vw 80px;
+  padding: 0 var(--gutter) 80px;
 }
 
 .timeline {
@@ -117,13 +117,13 @@
 
 /* ACADÉMIQUE */
 .academic-section {
-  padding: 60px 5vw 100px;
+  padding: 60px var(--gutter) 100px;
   background: var(--color-bg-alt);
 }
 
 .academic-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: 1.5rem;
 }
 

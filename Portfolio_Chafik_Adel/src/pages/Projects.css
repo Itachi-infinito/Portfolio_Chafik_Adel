@@ -1,10 +1,10 @@
-.projects-header { padding: 80px 5vw 40px; }
+.projects-header { padding: 80px var(--gutter) 40px; }
 
-.projects-section { padding: 0 5vw 100px; }
+.projects-section { padding: 0 var(--gutter) 100px; }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
   gap: 1.5rem;
 }
 
