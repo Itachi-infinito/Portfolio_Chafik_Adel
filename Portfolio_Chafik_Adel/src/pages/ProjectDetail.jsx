@@ -103,22 +103,19 @@ const ProjectDetail = () => {
                     type="button"
                     className="detail-gallery__button"
                     onClick={() => setSelectedImage({
-                      src: `${import.meta.env.BASE_URL}images/projects/${project.imageFolder ?? project.slug}/${img}`,
-                      alt: `${project.title} — ${img}`,
+                      src: `${import.meta.env.BASE_URL}images/projects/${project.imageFolder ?? project.slug}/${img.file}`,
+                      alt: `${project.title} — ${img.caption}`,
                     })}
-                    aria-label={`Ouvrir ${project.title} — ${img} en grand`}
+                    aria-label={`Ouvrir ${project.title} — ${img.caption} en grand`}
                   >
                     <img
-                      src={`${import.meta.env.BASE_URL}images/projects/${project.imageFolder ?? project.slug}/${img}`}
-                      alt={`${project.title} — ${img}`}
+                      src={`${import.meta.env.BASE_URL}images/projects/${project.imageFolder ?? project.slug}/${img.file}`}
+                      alt={`${project.title} — ${img.caption}`}
                       className="detail-gallery__img"
                     />
                   </button>
                   <figcaption>
-                    {img === 'pico-profile.png' && 'Raspberry Pi Pico — profil'}
-                    {img === 'pcb.jpg' && 'Routage et vue PCB'}
-                    {img === 'pcb-3d.jpg' && 'Visualisation 3D du PCB'}
-                    {img.startsWith('schematic-') && `Schématique — page ${i - 2}`}
+                    {img.caption}
                   </figcaption>
                 </figure>
               ))}
