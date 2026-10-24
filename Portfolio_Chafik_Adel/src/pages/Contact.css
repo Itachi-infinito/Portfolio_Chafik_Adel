@@ -1,34 +1,3 @@
-.contact-page { padding-top: 68px; }
-
-.section-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.8rem;
-}
-.section-title {
-  font-family: var(--font-head);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 1.2rem;
-}
-.section-title span {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.divider {
-  width: 48px; height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
-  border-radius: 4px;
-  margin-bottom: 3rem;
-}
-
 .contact-header { padding: 80px 5vw 40px; }
 .contact-section { padding: 0 5vw 100px; }
 

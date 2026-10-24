@@ -10,7 +10,7 @@ const skills = [
 
 const About = () => {
   return (
-    <main className="about-page">
+    <main className="page about-page">
       <section className="about-hero">
         <div className="about-hero__content">
           <p className="section-label">Qui suis-je</p>

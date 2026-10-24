@@ -76,7 +76,7 @@ const academics = [
 
 const Experience = () => {
   return (
-    <main className="exp-page">
+    <main className="page exp-page">
 
       {/* HEADER */}
       <section className="exp-header">

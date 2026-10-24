@@ -2,7 +2,7 @@
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  height: 68px;
+  height: var(--header-h);
   padding: 0 5vw;
   display: flex;
   align-items: center;
@@ -102,7 +102,7 @@
   .nav {
     display: flex;
     position: fixed;
-    top: 68px;
+    top: var(--header-h);
     right: 0;
     bottom: 0;
     left: 0;

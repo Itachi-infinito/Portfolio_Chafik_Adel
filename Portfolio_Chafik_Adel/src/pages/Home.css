@@ -123,38 +123,6 @@
   margin-bottom: 3rem;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.8rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
-  text-decoration: none;
-}
-.btn--primary {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
-  color: var(--color-on-accent);
-  box-shadow: 0 4px 24px color-mix(in srgb, var(--color-accent) 35%, transparent);
-}
-.btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px color-mix(in srgb, var(--color-accent) 45%, transparent); }
-.btn--ghost {
-  background: transparent;
-  color: var(--color-text);
-  border: 1px solid color-mix(in srgb, var(--color-white) 12%, transparent);
-}
-.btn--ghost:hover { background: var(--color-surface); transform: translateY(-2px); }
-
-.btn--download {
-  background: linear-gradient(135deg, var(--color-success), var(--color-success-dark));
-  color: var(--color-on-accent);
-  box-shadow: 0 4px 24px color-mix(in srgb, var(--color-success) 28%, transparent);
-}
-.btn--download:hover { transform: translateY(-2px); box-shadow: 0 8px 32px color-mix(in srgb, var(--color-success) 45%, transparent); }
-
 .hero__socials {
   display: flex;
   gap: 1rem;

@@ -27,7 +27,7 @@ const ProjectDetail = () => {
   if (!project) return <Navigate to="/projects" replace />
 
   return (
-    <main className="detail-page">
+    <main className="page detail-page">
       {/* Back */}
       <div className="detail-back">
         <Link to="/projects" className="back-link">
