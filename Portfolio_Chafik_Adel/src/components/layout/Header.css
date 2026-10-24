@@ -53,7 +53,13 @@
   letter-spacing: -0.01em;
 }
 
-.cartouche:hover .cartouche__cell--name .cartouche__value { color: var(--color-accent); }
+/* Survol réservé aux appareils qui en ont un : sur écran tactile, l'état :hover
+   reste collé au dernier élément touché et donnerait deux liens « actifs ». */
+@media (hover: hover) {
+  .cartouche:hover .cartouche__cell--name .cartouche__value { color: var(--color-accent); }
+  .nav__link:hover { color: var(--color-accent); }
+  .nav__cta:hover { border-color: var(--color-accent); }
+}
 
 /* NAVIGATION */
 .nav {
@@ -71,7 +77,6 @@
   white-space: nowrap;
   transition: color 0.15s;
 }
-.nav__link:hover { color: var(--color-accent); }
 
 .nav__link--active { color: var(--color-accent); }
 .nav__link--active::after {
@@ -86,7 +91,6 @@
   border: 1px solid var(--color-border-strong);
   border-radius: 2px;
 }
-.nav__cta:hover,
 .nav__cta.nav__link--active { border-color: var(--color-accent); }
 .nav__cta.nav__link--active::after { display: none; }
 
