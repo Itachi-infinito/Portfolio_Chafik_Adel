@@ -38,7 +38,7 @@ export const projects = [
     status: "en cours",
     imageFolder: "projet_usb",
     coverImage: "images/projects/projet_usb/PCB_3D.png",
-    badges: ["Hardware", "Electronics"],
+    badges: ["Hardware", "Électronique"],
     stack: ["Altium Designer", "Altium 365", "MCP73831", "PAM2401"],
     description: "Conception complète d'un chargeur de batterie portable USB-C. Intègre les ICs MCP73831 (gestion de charge LiPo) et PAM2401 (boost converter). Toutes les phases couvertes : schémas électriques, routage PCB, BOM jusqu'à la fabrication.",
     fullDescription: "Projet de conception hardware complète d'un chargeur de batterie portable avec interface USB-C. L'objectif était de réaliser un chargeur compact intégrant deux fonctions principales : la gestion de charge d'une cellule LiPo et l'élévation de tension pour alimenter un périphérique USB en sortie.\n\nLe circuit s'articule autour de deux ICs clés : le MCP73831 de Microchip pour le contrôle de charge LiPo (charge CC/CV, protection surcharge, indication état) et le PAM2401 comme boost converter pour élever la tension batterie vers 5V USB en sortie.\n\nL'ensemble du projet a été réalisé sous Altium Designer, depuis la création des schématiques jusqu'au routage PCB complet, en passant par la génération de la BOM et des fichiers Gerber pour fabrication.",
