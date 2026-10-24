@@ -1,148 +1,122 @@
+import { Link } from 'react-router-dom'
+import { projectRef } from '../data/projects'
 import './Experience.css'
 
+// Dates, intitulés et missions alignés sur public/CV_Adel_Chafik.pdf.
+// Aucun nom de client DVC.
 const experiences = [
   {
-    period: "2025 — Présent",
-    role: "Ingénieur en Développement",
-    company: "DVC",
-    location: "Belgique",
+    period: "sept. 2025 – aujourd'hui",
     type: "CDI",
-    tone: "var(--color-success)",
+    role: "Ingénieur électronique, développement & production",
+    place: "DVC · Nivelles",
     missions: [
-      "Réparation et diagnostic de cartes électroniques industrielles",
-      "Conception de cartes électroniques PCB",
-      "Développement software embarqué et applicatif",
-      "Projets pour clients industriels majeurs : IBA, Infrabel et autres",
-    ]
+      "Conçu un tracker IoT anti-vol B2B pour câbles électriques : PCB ultra-compact (~12 × 25 mm), encapsulé en résine, IP67.",
+      "Routé des PCB haute densité sous Altium Designer : lignes RF 50 Ω, adaptation d'antennes, coexistence LTE-M / LoRaWAN / GNSS.",
+      "Développé le firmware embarqué en C (Nordic) et validé les prototypes sur bancs de test : mesures, débogage hardware et firmware.",
+      "Encadré les équipes de production et assuré le lien avec les clients : planning, commandes, suivi qualité et reporting technique.",
+      "Réparation et diagnostic de cartes électroniques industrielles.",
+    ],
   },
   {
-    period: "janv. 2025 — juin 2025",
-    role: "Stagiaire Ingénieur Hardware",
-    company: "Thales Alenia Space",
-    location: "Belgique",
+    period: "janv. – juin 2025",
     type: "Stage",
-    tone: "var(--color-accent)",
+    role: "Stagiaire ingénieur hardware",
+    place: "Thales Alenia Space · Belgique",
     missions: [
-      "Stage dans le domaine spatial — projet confidentiel",
-      "Conception et développement hardware dans un environnement industriel exigeant",
-      "Travail en équipe sur des systèmes embarqués à haute fiabilité",
-    ]
+      "Conçu un convertisseur buck-boost inverseur pour propulseurs à effet Hall (moteurs plasmiques de satellite).",
+      "Mis au point une régulation à double boucle tension / courant (PI) : stabilité validée par Bode et SIMetrix, réponse dynamique optimisée.",
+      "Réalisé le PCB complet sous KiCad (CEM, plans de masse), préparé les bancs de test et débogué les boucles de régulation.",
+    ],
   },
   {
-    period: "janv. 2023 — avr. 2023",
-    role: "Stagiaire Ingénieur Hardware",
-    company: "CISSOID",
-    location: "Louvain-La-Neuve",
+    period: "janv. – avr. 2023",
     type: "Stage",
-    tone: "var(--color-accent-2)",
+    role: "Stagiaire ingénieur hardware",
+    place: "CISSOID · Louvain-la-Neuve",
     missions: [
-      "Développement de plans de test pour composants MOSFETs haute performance",
-      "Conception et amélioration d'un PCB sous Altium Designer",
-      "Validation expérimentale de composants électroniques",
-    ]
+      "Développé des plans de test pour des MOSFETs.",
+      "Conçu et amélioré un PCB sous Altium Designer.",
+      "Validation expérimentale de composants électroniques.",
+    ],
   },
 ]
 
 const academics = [
   {
-    title: "Projet de robot mobile autonome",
-    school: "ECAM Brussels Engineering School",
-    missions: [
-      "Coordination technique d'une équipe pluridisciplinaire",
-      "Répartition des tâches : électronique, programmation, intégration système",
-      "Mise en place d'une régulation PID et sécurité embarquée",
-      "Présentation des résultats devant jury",
-    ]
+    title: "Robot mobile autonome",
+    text: "Coordination technique d'une équipe pluridisciplinaire, régulation PID et sécurité embarquée.",
+    project: "titan-striker", // même projet que la fiche Titan Striker
   },
   {
-    title: "Conception d'un convertisseur Buck-Boost inversé",
-    school: "Projet académique",
-    missions: [
-      "Simulation sous SIMetrix et LTspice",
-      "Conception du schéma et routage PCB sous KiCad",
-      "Validation expérimentale en laboratoire",
-    ]
+    title: "Convertisseur buck-boost inversé",
+    text: "Simulation, schéma et PCB, puis validation expérimentale en laboratoire.",
   },
   {
-    title: "Projet IoT — Montre connectée pour coureurs",
-    school: "Projet académique",
-    missions: [
-      "Développement d'un système intégrant capteurs et communication sans fil",
-      "Coordination technique et suivi du planning",
-      "Contribution aux choix d'architecture système",
-    ]
+    title: "Montre connectée pour coureurs (IoT)",
+    text: "Capteurs, communication sans fil, interface utilisateur et choix d'architecture.",
   },
 ]
 
 const Experience = () => {
   return (
     <main className="page exp-page">
-
-      {/* HEADER */}
       <section className="exp-header">
         <p className="section-label">Parcours</p>
-        <h1 className="section-title">Expérience <span>professionnelle</span></h1>
+        <h1 className="section-title">Expérience</h1>
         <div className="divider" />
       </section>
 
-      {/* TIMELINE PRO */}
-      <section className="exp-section">
-        <div className="timeline">
-          {experiences.map((exp, i) => (
-            <div key={i} className="timeline-item reveal" data-delay={i * 120}>
-              <div
-                className="timeline-dot"
-                style={{ '--tone': exp.tone }}
-              />
-              <div className="timeline-card">
-                <div className="timeline-card__header">
-                  <div>
-                    <p className="timeline-card__period">{exp.period}</p>
-                    <h3 className="timeline-card__role">{exp.role}</h3>
-                    <p className="timeline-card__company">
-                      {exp.company}
-                      <span className="timeline-card__location"> · {exp.location}</span>
-                    </p>
-                  </div>
-                  <span
-                    className="timeline-card__badge"
-                    style={{ '--tone': exp.tone }}
-                  >
-                    {exp.type}
-                  </span>
-                </div>
-                <ul className="timeline-card__missions">
-                  {exp.missions.map((m, j) => (
-                    <li key={j}>{m}</li>
-                  ))}
+      <section className="exp-section" aria-labelledby="exp-pro-title">
+        <h2 id="exp-pro-title" className="exp-section__title">Expérience professionnelle</h2>
+        <ol className="exp-list">
+          {experiences.map(exp => (
+            <li key={exp.place} className="exp-item">
+              <p className="exp-item__meta">
+                <span>{exp.period}</span>
+                <span className="exp-item__type">{exp.type}</span>
+              </p>
+              <div className="exp-item__body">
+                <h3 className="exp-item__role">{exp.role}</h3>
+                <p className="exp-item__place">{exp.place}</p>
+                <ul className="exp-item__missions">
+                  {exp.missions.map(m => <li key={m}>{m}</li>)}
                 </ul>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
-      {/* EXPÉRIENCES ACADÉMIQUES */}
-      <section className="academic-section reveal">
-        <p className="section-label">Formation pratique</p>
-        <h2 className="section-title">Projets <span>académiques</span></h2>
-        <div className="divider" />
-
-        <div className="academic-grid">
-          {academics.map((ac, i) => (
-            <div key={i} className="academic-card reveal" data-delay={i * 100}>
-              <h3 className="academic-card__title">{ac.title}</h3>
-              <p className="academic-card__school">{ac.school}</p>
-              <ul className="academic-card__missions">
-                {ac.missions.map((m, j) => (
-                  <li key={j}>{m}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      <section className="exp-section exp-section--last">
+        <table className="specs exp-academic">
+          <caption>Projets académiques · ECAM Brussels</caption>
+          <thead>
+            <tr>
+              <th scope="col">Projet</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {academics.map(ac => (
+              <tr key={ac.title}>
+                <th scope="row">{ac.title}</th>
+                <td>
+                  {ac.text}
+                  {ac.project && (
+                    <>
+                      {' '}
+                      <Link to={`/projects/${ac.project}`} className="exp-academic__link">
+                        Fiche {projectRef(ac.project)} →
+                      </Link>
+                    </>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
-
     </main>
   )
 }
