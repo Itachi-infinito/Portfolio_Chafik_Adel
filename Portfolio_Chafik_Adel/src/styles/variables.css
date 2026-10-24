@@ -15,26 +15,21 @@
   --color-border-strong: #16181D;  /* filet d'encre */
   --color-text:          #16181D;  /* encre — 16,3:1 sur papier */
   --color-text-muted:    #5C5F66;  /* 5,9:1 sur papier */
-  --color-white:         #fff;
-  --color-black:         #000;
   --color-on-accent:     #F6F5F1;
 
   /* Couleur d'accent — cuivre, 4,6:1 sur papier (AA) ; pas de texte cuivre
      sur --color-surface-alt (4,1:1) */
   --color-accent: #B4541A;
 
+  /* Voile de la lightbox (fiche projet) : encre à 92 % */
+  --lightbox-bg: color-mix(in srgb, var(--color-text) 92%, transparent);
+
   /* Alias de l'ancienne charte, encore lus par les pages pas encore refaites.
      À supprimer quand plus aucune page ne les utilise. */
   --color-accent-2:         var(--color-accent);
-  --color-accent-3:         var(--color-accent);
   --color-accent-soft-text: var(--color-accent);
   --color-success:          var(--color-accent);
-  --color-success-dark:     var(--color-accent);
   --color-danger:           var(--color-accent);
-  --thumb-gradient:          var(--color-surface-alt);
-  --thumb-gradient-featured: var(--color-surface-alt);
-  --thumb-overlay:           none;
-  --lightbox-bg:             color-mix(in srgb, var(--color-text) 92%, transparent);
 
   /* Typographie */
   --font-sans: 'IBM Plex Sans', system-ui, sans-serif;

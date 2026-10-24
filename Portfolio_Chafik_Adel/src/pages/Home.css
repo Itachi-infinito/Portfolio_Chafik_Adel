@@ -70,84 +70,8 @@
   padding: 0 var(--gutter) clamp(4rem, 10vh, 6rem);
 }
 
-.specs {
-  width: 100%;
-  border-collapse: collapse;
-  border-top: 1px solid var(--color-border-strong);
-  border-bottom: 1px solid var(--color-border-strong);
-}
-
-.specs caption {
-  caption-side: top;
-  text-align: left;
-  padding-bottom: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.specs th,
-.specs td {
-  padding: 0.85rem 0;
-  text-align: left;
-  vertical-align: baseline;
-  border-bottom: 1px solid var(--color-border);
-}
-.specs tbody tr:last-child th,
-.specs tbody tr:last-child td { border-bottom: none; }
-
-.specs thead th {
-  padding: 0.6rem 0;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  border-bottom: 1px solid var(--color-border-strong);
-}
-
-.specs tbody th {
-  width: 32%;
-  padding-right: 2rem;
-  font-weight: 500;
-}
-
-.specs__value {
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-}
-.specs__detail {
-  display: block;
-  margin-top: 0.15rem;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-}
-
 /* ≤ 899px : hero sur une colonne, image sous le texte */
 @media (max-width: 899px) {
   .home-hero { grid-template-columns: minmax(0, 1fr); }
   .home-hero__lead { font-size: 1.125rem; }
-}
-
-/* ≤ 599px : chaque ligne du tableau s'empile */
-@media (max-width: 599px) {
-  .specs thead { display: none; }
-  .specs tr { display: block; padding: 0.85rem 0; border-bottom: 1px solid var(--color-border); }
-  .specs tbody tr:last-child { border-bottom: none; }
-  .specs th,
-  .specs td { display: block; width: auto; padding: 0; border-bottom: none; }
-  .specs tbody th {
-    width: auto;
-    padding-right: 0;
-    margin-bottom: 0.2rem;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-  }
 }
