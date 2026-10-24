@@ -1,47 +1,37 @@
 /*
- * Source unique des tokens du site.
+ * Source unique des tokens du site — charte « Datasheet ».
+ * Une couleur dominante (encre) et un seul accent (cuivre, réservé aux liens
+ * et éléments actifs) ; le reste en neutres papier.
  * Aucune couleur en dur ailleurs : les teintes transparentes sont dérivées
  * avec color-mix(in srgb, var(--color-…) X%, transparent).
- * Valeurs actuelles conservées — remplacées par la palette Datasheet à l'étape 2.
  */
 :root {
   /* Couleurs — neutres */
-  --color-bg:          #08080e;
-  --color-bg-alt:      #0d0d18;
-  --color-surface:     #12121f;
-  --color-surface-alt: #1a1a2e;
-  --color-border:        rgba(255,255,255,0.06);
-  --color-border-strong: rgba(255,255,255,0.12);
-  --color-text:        #e8e6f0;
-  --color-text-muted:  #7a7890;
-  --color-white:       #fff;
-  --color-black:       #000;
-  --color-on-accent:   #fff;
+  --color-bg:            #F6F5F1;  /* papier */
+  --color-bg-alt:        #EFEDE7;
+  --color-surface:       #FBFAF7;
+  --color-surface-alt:   #ECEAE3;
+  --color-border:        #D9D6CE;  /* filet fin */
+  --color-border-strong: #16181D;  /* filet d'encre */
+  --color-text:          #16181D;  /* encre — 16,3:1 sur papier */
+  --color-text-muted:    #5C5F66;  /* 5,9:1 sur papier */
+  --color-on-accent:     #F6F5F1;
 
-  /* Couleurs — accent et états */
-  --color-accent:           #5b4ef8;
-  --color-accent-2:         #8b5cf6;
-  --color-accent-3:         #c084fc;
-  --color-accent-soft-text: #a78bfa;
-  --color-success:          #06d6a0;
-  --color-success-dark:     #059669;
-  --color-danger:           #f87171;
+  /* Couleur d'accent — cuivre, 4,6:1 sur papier (AA) ; pas de texte cuivre
+     sur --color-surface-alt (4,1:1) */
+  --color-accent: #B4541A;
 
-  /* Décors de l'ancienne charte (à supprimer à l'étape 2) */
-  --thumb-gradient:          linear-gradient(135deg, #1a0533, #0d001f, #001a33);
-  --thumb-gradient-featured: linear-gradient(135deg, #1a0533, #0d001f, #001533);
-  --thumb-overlay:           linear-gradient(90deg, rgba(9, 4, 25, 0.55), rgba(9, 4, 25, 0.12));
-  --lightbox-bg:             rgba(4, 3, 12, 0.92);
+  /* Voile de la lightbox (fiche projet) : encre à 92 % */
+  --lightbox-bg: color-mix(in srgb, var(--color-text) 92%, transparent);
 
   /* Typographie */
-  --font-head: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  /* Charte Datasheet — chargées dans index.html, appliquées à l'étape 2 */
   --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --font-head: var(--font-sans);
+  --font-body: var(--font-sans);
 
   /* Mise en page */
-  --header-h: 68px;
+  --header-h: 64px;
   --gutter:   5vw;
 
   /* Misc */

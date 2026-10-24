@@ -1,9 +1,24 @@
+/* global __BUILD_DATE__ */
 import { useState, useEffect } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import './Header.css'
 
+// Cases du cartouche : la révision est la date du build (vite.config.js)
+const cells = [
+  { key: 'name',  label: 'Nom',      value: 'Adel Chafik' },
+  { key: 'role',  label: 'Fonction', value: 'Ingénieur électronique' },
+  { key: 'place', label: 'Lieu',     value: 'Nivelles, BE' },
+  { key: 'rev',   label: 'Rév.',     value: __BUILD_DATE__ },
+]
+
+const links = [
+  { to: '/',           label: 'Accueil'    },
+  { to: '/about',      label: 'À propos'   },
+  { to: '/experience', label: 'Expérience' },
+  { to: '/projects',   label: 'Projets'    },
+]
+
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
@@ -16,25 +31,18 @@ const Header = () => {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const links = [
-    { to: '/',           label: 'Accueil'    },
-    { to: '/about',      label: 'À propos'   },
-    { to: '/experience', label: 'Expérience' },
-    { to: '/projects',   label: 'Projets'    },
-  ]
-
   return (
-    <header className={`header ${scrolled ? 'header--scrolled' : ''} ${menuOpen ? 'header--menu-open' : ''}`}>
-      <NavLink to="/" className="logo">AC.</NavLink>
+    <header className={`header ${menuOpen ? 'header--menu-open' : ''}`}>
+      <Link to="/" className="cartouche" aria-label="Adel Chafik, ingénieur électronique — accueil">
+        {cells.map(cell => (
+          <span key={cell.key} className={`cartouche__cell cartouche__cell--${cell.key}`}>
+            <span className="cartouche__label">{cell.label}</span>
+            <span className="cartouche__value">{cell.value}</span>
+          </span>
+        ))}
+      </Link>
 
-      {/* Navigation desktop */}
-      <nav id="primary-navigation" className={`nav ${menuOpen ? 'nav--open' : ''}`}>
+      <nav id="primary-navigation" className={`nav ${menuOpen ? 'nav--open' : ''}`} aria-label="Navigation principale">
         {links.map(link => (
           <NavLink
             key={link.to}
@@ -45,12 +53,24 @@ const Header = () => {
             {link.label}
           </NavLink>
         ))}
-        <NavLink to="/contact" className="nav__cta">
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => `nav__link nav__cta ${isActive ? 'nav__link--active' : ''}`}
+        >
           Contact
         </NavLink>
+
+        {/* Menu mobile : cases du cartouche masquées dans le header */}
+        <dl className="nav__meta">
+          {cells.filter(c => c.key === 'place' || c.key === 'rev').map(cell => (
+            <div key={cell.key}>
+              <dt>{cell.label}</dt>
+              <dd>{cell.value}</dd>
+            </div>
+          ))}
+        </dl>
       </nav>
 
-      {/* Burger mobile */}
       <button
         className={`burger ${menuOpen ? 'burger--open' : ''}`}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -61,7 +81,6 @@ const Header = () => {
         <span /><span /><span />
       </button>
     </header>
-    
   )
 }
 

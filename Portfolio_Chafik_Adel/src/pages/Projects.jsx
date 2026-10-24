@@ -1,83 +1,68 @@
 import { Link } from 'react-router-dom'
-import { projects } from '../data/projects'
+import { orderedProjects, projectRef, PCB_SLUGS } from '../data/projects'
 import './Projects.css'
+
+const BASE = import.meta.env.BASE_URL
+
+const groups = [
+  { id: 'pcb', title: 'Cartes PCB', items: orderedProjects.filter(p => PCB_SLUGS.includes(p.slug)), thumbs: true },
+  { id: 'autres', title: 'Autres projets', items: orderedProjects.filter(p => !PCB_SLUGS.includes(p.slug)), thumbs: false },
+]
 
 const Projects = () => {
   return (
     <main className="page projects-page">
       <section className="projects-header">
         <p className="section-label">Réalisations</p>
-        <h1 className="section-title">Mes <span>projets</span></h1>
+        <h1 className="section-title">Projets</h1>
         <div className="divider" />
       </section>
 
       <section className="projects-section">
-        <div className="projects-grid">
-          {projects.map((project, i) => (
-            <div
-              key={i}
-              className={`project-card ${project.featured ? 'project-card--featured' : ''} reveal`}
-              data-delay={i * 80}
-            >
-              {/* Thumb */}
-              <div
-                className={`project-card__thumb ${project.featured ? 'project-card__thumb--featured' : ''} ${project.coverImage && project.showCoverInCard !== false ? 'project-card__thumb--image' : ''}`}
-              >
-                {project.coverImage && project.showCoverInCard !== false ? (
-                  <img
-                    className="project-card__cover"
-                    src={`${import.meta.env.BASE_URL}${project.coverImage}`}
-                    alt={project.title}
-                    loading="lazy"
-                  />
-                ) : (
-                  <span className="project-card__emoji">{project.emoji}</span>
-                )}
-                <div className="project-card__badges-top">
-                  {project.badges.map((b, j) => (
-                    <span key={j} className="badge-top">{b}</span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Body */}
-              <div className="project-card__body">
-                <p className="project-card__type">{project.type}</p>
-                <h3 className="project-card__title">{project.title}</h3>
-                <p className="project-card__desc">{project.description}</p>
-
-                {/* Stack */}
-                <div className="project-card__stack">
-                  {project.stack.map((s, j) => (
-                    <span key={j} className="stack-badge">{s}</span>
-                  ))}
-                </div>
-
-                {/* Footer links */}
-                <div className="project-card__footer">
-                  {project.links.length > 0 && (
-                    <div className="project-card__links">
-                      {project.links.map((link, j) => (
-                        <a
-                          key={j}
-                          href={link.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="project-link"
-                        >
-                          {link.icon} {link.label}
-                        </a>
-                      ))}
+        {groups.map(group => (
+          <table key={group.id} className={`projects-index ${group.thumbs ? 'projects-index--thumbs' : ''}`}>
+            <caption>{group.title} <span className="projects-index__count">({group.items.length})</span></caption>
+            <thead>
+              <tr>
+                <th scope="col">Réf.</th>
+                <th scope="col">Projet</th>
+                <th scope="col">Domaine</th>
+                <th scope="col">Outils</th>
+                <th scope="col">Année</th>
+              </tr>
+            </thead>
+            <tbody>
+              {group.items.map(project => (
+                <tr key={project.slug}>
+                  <td className="projects-index__ref">{projectRef(project.slug)}</td>
+                  <th scope="row" className="projects-index__project">
+                    <div className="projects-index__head">
+                      {group.thumbs && project.coverImage && (
+                        <img
+                          className="projects-index__thumb"
+                          src={`${BASE}${project.coverImage}`}
+                          alt=""
+                          width="128"
+                          height="86"
+                          loading="lazy"
+                        />
+                      )}
+                      <Link to={`/projects/${project.slug}`} className="projects-index__title">
+                        {project.title}
+                      </Link>
                     </div>
-                  )}
-                  <Link to={`/projects/${project.slug}`} className="project-detail-link">
-                    Voir le projet →
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+                  </th>
+                  <td className="projects-index__type">{project.type}</td>
+                  <td className="projects-index__stack">{project.stack.join(' · ')}</td>
+                  <td className="projects-index__year">
+                    {project.year}
+                    {project.status && <span className="projects-index__status">{project.status}</span>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ))}
       </section>
     </main>
   )

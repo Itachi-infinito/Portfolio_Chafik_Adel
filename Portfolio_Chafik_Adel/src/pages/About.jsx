@@ -1,5 +1,7 @@
 import './About.css'
 
+const BASE = import.meta.env.BASE_URL
+
 const skills = [
   { category: "PCB & Hardware", items: ["Altium Designer", "KiCad", "PCB Design", "Circuit électronique", "CEM/EMC"] },
   { category: "Simulation & Test", items: ["LTspice", "SIMetrix", "Micro-Cap", "MPLAB X", "Validation composants"] },
@@ -8,122 +10,107 @@ const skills = [
   { category: "Méthodes", items: ["Agile", "UML", "Git", "GitHub", "SQL"] },
 ]
 
+// Intitulés et niveaux repris du CV (public/CV_Adel_Chafik.pdf)
+const infos = [
+  { param: 'Langues', value: 'Français (langue maternelle) · anglais (intermédiaire)' },
+  { param: 'Localisation', value: 'Nivelles, Belgique' },
+  { param: 'Permis', value: 'B' },
+]
+
+const education = [
+  { period: '2023 – 2025', degree: 'Master Ingénieur Industriel en Électronique', school: 'ECAM Brussels' },
+  { period: '2020 – 2023', degree: 'Bachelier Ingénieur Industriel en Électronique', school: 'ECAM Brussels' },
+]
+
 const About = () => {
   return (
     <main className="page about-page">
-      <section className="about-hero">
-        <div className="about-hero__content">
-          <p className="section-label">Qui suis-je</p>
-          <h1 className="section-title">À propos <span>de moi</span></h1>
-          <div className="divider" />
-
-          <div className="about-grid reveal">
-            <div className="about-text">
-              <p>
-                Ingénieur en électronique diplômé du{' '}
-                <strong>Master en Sciences de l'Ingénieur Industriel</strong>{' '}
-                à l'<strong>ECAM Brussels Engineering School</strong>,
-                je suis passionné par la conception de solutions techniques innovantes,
-                du composant au système complet.
-              </p>
-              <p>
-                Mon parcours combine rigueur académique et expériences industrielles
-                exigeantes — dont un stage chez{' '}
-                <strong>Thales Alenia Space</strong>{' '}
-                dans le domaine spatial et un stage chez{' '}
-                <strong>CISSOID</strong>{' '}
-                spécialisé en électronique haute performance.
-              </p>
-              <p>
-                Actuellement chez <strong>DVC</strong>, j'interviens sur des projets
-                pour des clients industriels majeurs comme{' '}
-                <strong>IBA</strong> et <strong>Infrabel</strong>,
-                en conception PCB et développement software.
-              </p>
-              <p>
-                Curieux et entrepreneur dans l'âme, j'ai également lancé{' '}
-                <strong>SparkWork</strong>, une application mobile de recrutement
-                en cours de publication sur iOS et Android.
-              </p>
-
-              <div className="about-tags">
-                <span className="tag">🇫🇷 Français</span>
-                <span className="tag">🇬🇧 Anglais</span>
-                <span className="tag">📍 Nivelles, Belgique</span>
-                <span className="tag">🎂 17/02/2002</span>
-                <span className="tag">🚗 Permis B</span>
-              </div>
-
-              <div className="about-cv">
-                <a
-                  href={`${import.meta.env.BASE_URL}CV_Adel_Chafik.pdf`}
-                  download="CV_Adel_Chafik.pdf"
-                  className="btn btn--download"
-                >
-                  📄 Télécharger mon CV
-                </a>
-              </div>
-            </div>
-
-            <div className="about-info">
-              <div className="info-card">
-                <h3 className="info-card__title">🎓 Formation</h3>
-                <div className="info-item">
-                  <span className="info-item__period">2023 — 2025</span>
-                  <strong>Master Sciences Ingénieur Industriel</strong>
-                  <span>Électronique · ECAM Brussels</span>
-                </div>
-                <div className="info-item">
-                  <span className="info-item__period">2020 — 2023</span>
-                  <strong>Bachelier Sciences Ingénieur Industriel</strong>
-                  <span>Électronique · ECAM Brussels</span>
-                </div>
-              </div>
-
-              <div className="info-card">
-                <h3 className="info-card__title">📊 En chiffres</h3>
-                <div className="mini-stats">
-                  <div className="mini-stat">
-                    <span className="mini-stat__num">2</span>
-                    <span className="mini-stat__label">Stages industriels</span>
-                  </div>
-                  <div className="mini-stat">
-                    <span className="mini-stat__num">5+</span>
-                    <span className="mini-stat__label">Projets réalisés</span>
-                  </div>
-                  <div className="mini-stat">
-                    <span className="mini-stat__num">3+</span>
-                    <span className="mini-stat__label">Clients industriels</span>
-                  </div>
-                  <div className="mini-stat">
-                    <span className="mini-stat__num">1</span>
-                    <span className="mini-stat__label">App en cours de publication</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="about-header">
+        <p className="section-label">Profil</p>
+        <h1 className="section-title">À propos</h1>
+        <div className="divider" />
       </section>
 
-      {/* COMPÉTENCES */}
-      <section className="skills-section">
-        <p className="section-label">Expertise</p>
-        <h2 className="section-title">Compétences <span>techniques</span></h2>
-        <div className="divider" />
-
-        <div className="skills-grid">
-          {skills.map((group, i) => (
-            <div key={group.category} className="skill-card reveal" data-delay={i * 80}>
-              <h3 className="skill-card__title">{group.category}</h3>
-              <div className="skill-badges">
-                {group.items.map(item => (
-                  <span key={item} className="skill-badge">{item}</span>
-                ))}
-              </div>
-            </div>
-          ))}
+      <section className="about-intro">
+        <div className="about-bio">
+          <p>
+            Ingénieur en électronique, diplômé du Master Ingénieur Industriel en Électronique
+            de l'ECAM Brussels (2025).
+          </p>
+          <p>
+            Stages chez Thales Alenia Space (domaine spatial) et chez CISSOID (électronique
+            haute performance).
+          </p>
+          <p>
+            Depuis septembre 2025, ingénieur électronique (développement &amp; production) chez DVC,
+            à Nivelles : conception PCB et développement software pour des clients industriels.
+          </p>
+          <p>
+            J'ai également lancé SparkWork, une application mobile de recrutement en cours de
+            publication sur iOS et Android.
+          </p>
         </div>
+
+        <aside className="about-aside">
+          <table className="specs">
+            <caption>Informations</caption>
+            <tbody>
+              {infos.map(row => (
+                <tr key={row.param}>
+                  <th scope="row">{row.param}</th>
+                  <td>{row.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <a
+            href={`${BASE}CV_Adel_Chafik.pdf`}
+            download="CV_Adel_Chafik.pdf"
+            className="btn btn--ghost about-cv"
+          >
+            Télécharger le CV (PDF)
+          </a>
+        </aside>
+      </section>
+
+      <section className="about-tables">
+        <table className="specs about-education">
+          <caption>Formation</caption>
+          <thead>
+            <tr>
+              <th scope="col">Période</th>
+              <th scope="col">Diplôme</th>
+              <th scope="col">Établissement</th>
+            </tr>
+          </thead>
+          <tbody>
+            {education.map(row => (
+              <tr key={row.degree}>
+                <td><span className="specs__value">{row.period}</span></td>
+                <th scope="row">{row.degree}</th>
+                <td>{row.school}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <table className="specs about-skills">
+          <caption>Compétences</caption>
+          <thead>
+            <tr>
+              <th scope="col">Domaine</th>
+              <th scope="col">Éléments</th>
+            </tr>
+          </thead>
+          <tbody>
+            {skills.map(group => (
+              <tr key={group.category}>
+                <th scope="row">{group.category}</th>
+                <td><span className="specs__value">{group.items.join(' · ')}</span></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
     </main>
   )

@@ -23,6 +23,14 @@ a { color: inherit; text-decoration: none; }
 
 img { display: block; max-width: 100%; }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* Scroll reveal */
 .reveal {
   opacity: 0;
@@ -33,6 +41,10 @@ img { display: block; max-width: 100%; }
 .reveal--visible {
   opacity: 1;
   transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 /* Petits écrans : les titres longs passent à la ligne au lieu de déborder.

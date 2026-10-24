@@ -1,200 +1,78 @@
+/* ACCUEIL — une colonne : hero, puis tableau de caractéristiques */
+
 /* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 100px var(--gutter) 60px;
+.home-hero {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* le décor ne déborde pas sur le tableau */
+  padding: clamp(3rem, 9vh, 6.5rem) var(--gutter) 0;
 }
 
-.hero__grid {
+/* Décor PCB (src/assets/hero-pcb.svg) : en haut à droite, derrière le texte */
+.home-hero__decor {
   position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(color-mix(in srgb, var(--color-accent) 4%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 4%, transparent) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: gridMove 20s linear infinite;
-}
-@keyframes gridMove {
-  from { background-position: 0 0; }
-  to   { background-position: 60px 60px; }
-}
-
-.hero__orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
+  top: 0;
+  right: 0;
+  z-index: 0;
+  width: min(55%, 760px); /* 55 % du hero, plafonné pour tenir dans sa hauteur */
+  height: auto;
+  opacity: 0.12;
   pointer-events: none;
+  user-select: none;
 }
-.hero__orb--1 {
-  width: 600px; height: 600px;
-  top: -150px; right: -150px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 18%, transparent) 0%, transparent 70%);
-  animation: orb1 8s ease-in-out infinite alternate;
-}
-.hero__orb--2 {
-  width: 400px; height: 400px;
-  bottom: -100px; left: 10%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-success) 12%, transparent) 0%, transparent 70%);
-  animation: orb2 10s ease-in-out infinite alternate;
-}
-@keyframes orb1 { from { transform: translate(0,0); } to { transform: translate(-40px, 40px); } }
-@keyframes orb2 { from { transform: translate(0,0); } to { transform: translate(30px,-30px); } }
-
-.hero__content {
+.home-hero__text {
   position: relative;
-  z-index: 2;
-  max-width: 780px;
+  z-index: 1;
+}
+@media (max-width: 899px) {
+  .home-hero__decor { display: none; }
 }
 
-.hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 1rem;
-  border-radius: 50px;
-  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
-  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--color-accent-soft-text);
-  margin-bottom: 1.8rem;
-}
-
-.hero__badge-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--color-success);
-  box-shadow: 0 0 8px var(--color-success);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-
-.hero__name {
-  font-family: var(--font-head);
-  font-weight: 800;
-  font-size: clamp(3rem, 7vw, 6rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  margin-bottom: 0.5rem;
-}
-
-.hero__name-gradient {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2), var(--color-accent-3));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero__title {
-  font-family: var(--font-head);
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
+.home-hero__name {
+  font-family: var(--font-sans);
+  font-size: clamp(2.75rem, 6.5vw, 5.25rem);
   font-weight: 600;
-  color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
-  min-height: 2rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.home-hero__lead {
+  margin-top: clamp(1.25rem, 3vh, 2rem);
+  max-width: 36em;
+  font-size: clamp(1.125rem, 1.6vw, 1.4rem);
+  line-height: 1.5;
+}
+
+.home-hero__actions {
   display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.hero__cursor {
-  display: inline-block;
-  width: 3px; height: 1.2em;
-  background: var(--color-accent);
-  animation: blink 0.9s step-end infinite;
-}
-@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
-
-.hero__desc {
-  font-size: 1.05rem;
-  color: var(--color-text-muted);
-  max-width: 560px;
-  margin-bottom: 2.5rem;
-  line-height: 1.8;
-}
-
-.hero__actions {
-  display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  gap: 0.75rem;
+  margin-top: clamp(1.75rem, 4vh, 2.75rem);
 }
 
-.hero__socials {
+.home-hero__links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin-top: 1.5rem;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
 }
-
-.hero__social-icon {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  transition: all 0.3s;
-}
-.hero__social-icon:hover {
-  border-color: var(--color-accent);
+.home-hero__links a {
   color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-  transform: translateY(-3px);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.home-hero__links a:hover { text-decoration-thickness: 2px; }
+
+/* CARACTÉRISTIQUES — directement sous le hero (styles .specs dans components.css) */
+.home-specs {
+  padding: clamp(3rem, 8vh, 5.5rem) var(--gutter) clamp(4rem, 10vh, 6rem);
 }
 
-/* STATS */
-.stats {
-  padding: 60px var(--gutter);
-  background: var(--color-bg-alt);
-}
-
-.stats__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.2rem;
-}
-
-.stat-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: border-color 0.3s, transform 0.3s;
-}
-.stat-card:hover { border-color: var(--color-accent); transform: translateY(-4px); }
-
-.stat-card__number {
-  display: block;
-  font-family: var(--font-head);
-  font-size: 2rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.4rem;
-}
-.stat-card__label {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-}
-
-@media (max-width: 768px) {
-  .stats__grid { grid-template-columns: 1fr 1fr; }
-  .hero__actions { flex-direction: column; }
-}
-/* Reproduit l'ancien rendu ≤ 480px (orbes plafonnées à la largeur d'écran)
-   — à revoir à l'étape 2. */
-@media (max-width: 480px) {
-  .hero__orb { max-width: 100vw; }
-}
-
-/* Sous 375px, deux cartes côte à côte ne tiennent pas (« Master ») */
-@media (max-width: 374px) {
-  .stats__grid { grid-template-columns: 1fr; }
+/* Grand écran : colonne Paramètre plus étroite, valeurs plus lisibles */
+@media (min-width: 1100px) {
+  .home-specs .specs tbody th { width: 26%; }
+  .home-specs .specs__value { font-size: 1rem; }
 }
