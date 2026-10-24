@@ -1,34 +1,30 @@
-/* ACCUEIL — hero + tableau de caractéristiques */
+/* ACCUEIL — une colonne : hero, puis tableau de caractéristiques */
 
 /* HERO */
 .home-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  align-items: center;
-  gap: clamp(2rem, 5vw, 4.5rem);
-  padding: clamp(3rem, 8vh, 6rem) var(--gutter) clamp(3rem, 7vh, 5rem);
+  padding: clamp(3rem, 9vh, 6.5rem) var(--gutter) 0;
 }
 
 .home-hero__name {
   font-family: var(--font-sans);
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-size: clamp(2.75rem, 6.5vw, 5.25rem);
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   line-height: 1;
 }
 
 .home-hero__lead {
-  margin-top: 1.5rem;
-  max-width: 34em;
-  font-size: 1.25rem;
-  line-height: 1.55;
+  margin-top: clamp(1.25rem, 3vh, 2rem);
+  max-width: 36em;
+  font-size: clamp(1.125rem, 1.6vw, 1.4rem);
+  line-height: 1.5;
 }
 
 .home-hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2.25rem;
+  margin-top: clamp(1.75rem, 4vh, 2.75rem);
 }
 
 .home-hero__links {
@@ -40,38 +36,21 @@
   font-family: var(--font-mono);
   font-size: 0.9rem;
 }
-.home-hero__links a,
-.home-hero__figure figcaption a {
+.home-hero__links a {
   color: var(--color-accent);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
-.home-hero__links a:hover,
-.home-hero__figure figcaption a:hover { text-decoration-thickness: 2px; }
+.home-hero__links a:hover { text-decoration-thickness: 2px; }
 
-/* Fig. 1 — vraie image de PCB */
-.home-hero__figure img {
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--color-border-strong);
-}
-.home-hero__figure figcaption {
-  margin-top: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: var(--color-text-muted);
-}
-.home-hero__fig { color: var(--color-accent); font-weight: 500; }
-
-/* CARACTÉRISTIQUES */
+/* CARACTÉRISTIQUES — directement sous le hero (styles .specs dans components.css) */
 .home-specs {
-  padding: 0 var(--gutter) clamp(4rem, 10vh, 6rem);
+  padding: clamp(3rem, 8vh, 5.5rem) var(--gutter) clamp(4rem, 10vh, 6rem);
 }
 
-/* ≤ 899px : hero sur une colonne, image sous le texte */
-@media (max-width: 899px) {
-  .home-hero { grid-template-columns: minmax(0, 1fr); }
-  .home-hero__lead { font-size: 1.125rem; }
+/* Grand écran : colonne Paramètre plus étroite, valeurs plus lisibles */
+@media (min-width: 1100px) {
+  .home-specs .specs tbody th { width: 26%; }
+  .home-specs .specs__value { font-size: 1rem; }
 }

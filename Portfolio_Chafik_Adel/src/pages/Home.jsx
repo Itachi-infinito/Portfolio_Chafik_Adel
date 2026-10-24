@@ -51,20 +51,6 @@ const Home = () => {
             </li>
           </ul>
         </div>
-
-        <figure className="home-hero__figure">
-          <img
-            src={`${BASE}images/projects/esp32-iot/pcb.jpg`}
-            alt="Routage de la carte IoT ESP32, PCB 4 couches sous KiCad"
-            width="1548"
-            height="1044"
-            fetchPriority="high"
-          />
-          <figcaption>
-            <span className="home-hero__fig">Fig. 1</span> — Carte IoT ESP32, PCB 4 couches (KiCad) ·{' '}
-            <Link to="/projects/esp32-iot">Voir le projet →</Link>
-          </figcaption>
-        </figure>
       </section>
 
       <section className="home-specs" aria-labelledby="home-specs-title">
