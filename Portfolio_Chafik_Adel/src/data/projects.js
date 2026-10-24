@@ -5,7 +5,6 @@ export const projects = [
     type: "Application Mobile · Entrepreneuriat",
     year: "2026",
     status: "en cours",
-    coverImage: "images/projects/sparkwork/pp.png",
     badges: ["Projet phare", "iOS & Android"],
     stack: ["Flutter", "Firebase", "Dart", "Firestore", "Firebase Auth", "Node.js", ".NET MAUI"],
     description: "Application mobile de matching d'emploi avec une mécanique de swipe, conçue pour faciliter les mises en relation entre recruteurs et candidats.",
@@ -26,7 +25,6 @@ export const projects = [
       { file: "match.png", caption: "Écran de match" },
       { file: "swipe_candidat.png", caption: "Swipe côté candidat" },
       { file: "swipe_recruteur.png", caption: "Swipe côté recruteur" },
-      { file: "Projet_en_cours.png", caption: "Visuel promotionnel SparkWork" },
     ],
     links: [
       { label: "GitHub", url: "https://github.com/Itachi-infinito/SparkWork-Flutter" },
@@ -69,7 +67,6 @@ export const projects = [
     type: "Traceur anti-vol · Électronique industrielle",
     year: "2026",
     imageFolder: "copperwatch",
-    coverImage: "images/projects/copperwatch/Antenne.jpeg",
     badges: ["Hardware", "LoRaWAN", "LTE-M/GNSS"],
     stack: ["Altium Designer", "LoRaWAN", "LTE-M", "GNSS", "Détection de mouvement"],
     description: "Conception d'un traceur PCB anti-vol pour câbles électriques destiné à un client industriel, combinant connectivité longue portée, localisation et détection de mouvement.",
@@ -83,9 +80,7 @@ export const projects = [
       "Optimisation de l'architecture pour environnement industriel",
       "Focus sur la fiabilité, la consommation et la robustesse",
     ],
-    images: [
-      { file: "Antenne.jpeg", caption: "Illustration : GNSS, LoRaWAN, LTE" },
-    ],
+    images: [],
     links: [],
   },
   {
@@ -150,7 +145,6 @@ export const projects = [
     ],
     images: [
       { file: "photo_machine.png", caption: "Trancheuse à pain" },
-      { file: "Logo_jac.png", caption: "Logo JAC" },
     ],
     links: [],
   },
@@ -247,7 +241,6 @@ export const projects = [
     images: [
       { file: "Robot.png", caption: "Robot Titan Striker" },
       { file: "Partie_code.png", caption: "Extrait du code embarqué (C++, Arduino IDE)" },
-      { file: "Sparkoh.png", caption: "Logo Sparkoh!" },
     ],
     links: [
       { label: "GitHub", url: "https://github.com/Itachi-infinito/TitanStriker" },
