@@ -1,6 +1,7 @@
 <!doctype html>
 <!--
   Gabarit de l'image de partage (Open Graph), 1200 × 630.
+  Tailles de texte ≥ 24 px : l'aperçu LinkedIn affiche l'image à ~45 %.
   Régénérer depuis le dossier Portfolio_Chafik_Adel/ :
     "C:/Program Files/Google/Chrome/Application/chrome.exe" --headless=new --hide-scrollbars \
       --window-size=1200,630 --virtual-time-budget=5000 \
@@ -9,13 +10,12 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;600&display=swap" />
 <style>
   :root {
     --paper:  #F6F5F1;
     --ink:    #16181D;
-    --muted:  #5C5F66;
-    --rule:   #CFCDC6;
+    --muted:  #4A4D55;
     --copper: #B4541A;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,85 +24,54 @@
     background: var(--paper);
     color: var(--ink);
     font-family: 'IBM Plex Sans', sans-serif;
-    padding: 56px 64px;
+    padding: 64px 72px 56px;
     display: grid;
-    grid-template-columns: 1fr 520px;
-    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 440px;
+    grid-template-rows: 1fr auto;
     column-gap: 56px;
   }
-  .mono { font-family: 'IBM Plex Mono', monospace; }
-
-  .top {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 18px;
-    border-bottom: 1px solid var(--ink);
-    font-size: 17px;
-    letter-spacing: 0.04em;
-  }
-  .top .label { color: var(--copper); font-weight: 500; }
-  .top .where { color: var(--muted); }
+  .mono { font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
 
   .id { align-self: center; }
-  h1 { font-size: 92px; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
-  .role { margin-top: 22px; font-size: 30px; line-height: 1.3; }
-  .tools {
-    margin-top: 34px;
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    column-gap: 20px;
-    row-gap: 8px;
-    font-size: 19px;
-  }
-  .tools dt { color: var(--muted); }
+  .label { font-size: 24px; letter-spacing: 0.06em; color: var(--copper); }
+  h1 { margin-top: 20px; font-size: 104px; font-weight: 600; line-height: 0.98; letter-spacing: -0.025em; }
+  .role { margin-top: 28px; font-size: 38px; line-height: 1.25; }
 
-  figure { grid-row: 2; grid-column: 2; align-self: center; }
+  figure { align-self: center; }
   figure img {
     display: block;
-    width: 520px;
-    height: 351px;
+    width: 440px;
+    height: 330px;
     object-fit: cover;
-    border: 1px solid var(--ink);
+    border: 2px solid var(--ink);
   }
-  figcaption { margin-top: 12px; font-size: 15px; color: var(--muted); }
-  figcaption b { color: var(--copper); font-weight: 500; }
 
   .bottom {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
-    padding-top: 18px;
-    border-top: 1px solid var(--rule);
-    font-size: 16px;
+    padding-top: 22px;
+    border-top: 2px solid var(--ink);
+    font-size: 26px;
     color: var(--muted);
   }
+  .bottom .url { color: var(--ink); }
 </style>
 </head>
 <body>
-  <div class="top mono">
-    <span class="label">INGÉNIEUR ÉLECTRONIQUE</span>
-    <span class="where">ECAM Brussels · Nivelles, Belgique</span>
-  </div>
-
   <div class="id">
-    <h1>Adel Chafik</h1>
-    <p class="role">Conception PCB et systèmes embarqués</p>
-    <dl class="tools mono">
-      <dt>CAO</dt><dd>Altium Designer · KiCad</dd>
-      <dt>MCU</dt><dd>ESP32 · RP2040</dd>
-      <dt>Radio</dt><dd>LoRaWAN · LTE-M · GNSS</dd>
-    </dl>
+    <p class="label mono">ALTIUM · LORAWAN · LTE-M</p>
+    <h1>Adel<br />Chafik</h1>
+    <p class="role">Ingénieur Électronique<br />&amp; PCB Designer</p>
   </div>
 
   <figure>
     <img src="../public/images/projects/esp32-iot/pcb.jpg" alt="" />
-    <figcaption class="mono"><b>Fig. 1</b> — Carte IoT ESP32, PCB 4 couches (KiCad)</figcaption>
   </figure>
 
   <div class="bottom mono">
-    <span>Stages : Thales Alenia Space · CISSOID</span>
-    <span>itachi-infinito.github.io/Portfolio_Chafik_Adel</span>
+    <span class="url">adelchafik.com</span>
+    <span>ECAM Brussels · Belgique</span>
   </div>
 </body>
 </html>
