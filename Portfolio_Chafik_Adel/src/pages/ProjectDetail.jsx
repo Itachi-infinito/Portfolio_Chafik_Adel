@@ -96,7 +96,7 @@ const ProjectDetail = () => {
         {project.images.length > 0 ? (
           <section className="detail-section">
             <h2 className="detail-section__title">Galerie</h2>
-            <div className="detail-gallery" data-gallery-version="pico-pcb-1">
+            <div className="detail-gallery">
               {project.images.map((img, i) => (
                 <figure key={i} className="detail-gallery__item">
                   <button
@@ -146,9 +146,6 @@ const ProjectDetail = () => {
                   target="_blank"
                   rel="noreferrer"
                   className={`detail-link-btn ${link.url === '#' ? 'detail-link-btn--disabled' : ''}`}
-                  style={link.url.startsWith('images/') ? {
-                    '--preview-image': `url(${import.meta.env.BASE_URL}${link.url})`,
-                  } : undefined}
                 >
                   {link.icon} {link.label}
                 </a>

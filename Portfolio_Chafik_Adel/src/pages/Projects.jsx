@@ -64,9 +64,6 @@ const Projects = () => {
                           target="_blank"
                           rel="noreferrer"
                           className="project-link"
-                          style={link.url.startsWith('images/') ? {
-                            '--preview-image': `url(${import.meta.env.BASE_URL}${link.url})`,
-                          } : undefined}
                         >
                           {link.icon} {link.label}
                         </a>
