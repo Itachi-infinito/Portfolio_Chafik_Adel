@@ -29,9 +29,7 @@ const Home = () => {
         <div className="home-hero__text">
           <h1 className="home-hero__name">Adel Chafik</h1>
           <p className="home-hero__lead">
-            Ingénieur électronique. Je conçois des cartes (Altium Designer, KiCad),
-            des systèmes embarqués et IoT (LoRaWAN, LTE-M), et je développe des
-            applications mobiles en Flutter.
+            Ingénieur électronique spécialisé en systèmes embarqués et en conception de cartes.
           </p>
 
           <div className="home-hero__actions">
