@@ -52,7 +52,6 @@ export const projects = [
       "Form factor compact optimisé",
     ],
     images: [
-      { file: "Boitier chargeur usb.png", caption: "Boîtier du chargeur (rendu 3D)" },
       { file: "PCB_3D.png", caption: "Vue 3D du PCB" },
       { file: "Schematique_1.png", caption: "Schématique, page 1" },
       { file: "Schematique_2.png", caption: "Schématique, page 2" },
@@ -185,7 +184,7 @@ export const projects = [
     title: "Carte IoT Raspberry Pi Pico 4 couches",
     type: "Hardware · KiCad",
     year: "2025",
-    coverImage: "images/projects/rpi-pico-iot/pico-profile.png",
+    coverImage: "images/projects/rpi-pico-iot/PCB_3D_pic.jpg",
     badges: ["Hardware", "Pico"],
     stack: ["KiCad", "Raspberry Pi Pico", "PCB 4 couches", "Capteurs"],
     description: "Conception d'une carte IoT 4 couches autour du Raspberry Pi Pico, intégrant plusieurs capteurs et périphériques pour des applications embarquées compactes et flexibles.",
@@ -210,8 +209,7 @@ export const projects = [
     images: [
       { file: "PCB_pico.jpg", caption: "Routage du PCB 4 couches" },
       { file: "Schematique_pico.jpg", caption: "Schématique" },
-      { file: "PCB_3D_pic.jpg", caption: "Vue 3D du PCB" },
-      { file: "pico-profile.png", caption: "Raspberry Pi Pico, vue de profil" },
+      { file: "PCB_3D_pic.jpg", caption: "Vue 3D de la carte" },
     ],
     links: [
       { label: "GitHub", url: "https://github.com/Itachi-infinito/Raspberry-Pico-IoT-4-Layer-PCB" },
