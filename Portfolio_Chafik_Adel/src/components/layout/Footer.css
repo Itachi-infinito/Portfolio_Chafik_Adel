@@ -6,3 +6,4 @@
   font-size: 0.8rem;
   color: var(--color-text-muted);
 }
+.footer__rev { white-space: nowrap; }

@@ -5,7 +5,7 @@ import './Footer.css'
 const Footer = () => {
   return (
     <footer className="footer">
-      Adel Chafik · adelchafik.com · Rév. {__BUILD_DATE__}
+      Adel Chafik · adelchafik.com · <span className="footer__rev">Rév. {__BUILD_DATE__}</span>
     </footer>
   )
 }
