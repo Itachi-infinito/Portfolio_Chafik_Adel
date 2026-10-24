@@ -14,7 +14,7 @@ const specs = [
     value: String(pcbProjects.length),
     detail: pcbProjects.map(p => p.title).join(' · '),
   },
-  { param: 'Empilage max.', value: '4 couches', detail: 'ESP32 IoT, Raspberry Pi Pico IoT' },
+  { param: 'Empilage max.', value: '4 couches', detail: 'Carte IoT ESP32 · Carte IoT Raspberry Pi Pico' },
   { param: 'Outils CAO', value: 'Altium Designer · KiCad' },
   // Traits d'union insécables (U+2011) : « LTE-M » et « Wi-Fi » ne se coupent pas
   { param: 'Radio / IoT', value: 'LoRaWAN · LTE‑M · GNSS · Wi‑Fi/Bluetooth · RS485' },
