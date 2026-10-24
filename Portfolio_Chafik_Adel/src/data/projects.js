@@ -131,7 +131,6 @@ export const projects = [
     type: "Réparation électronique · Service après-vente",
     year: "2026",
     imageFolder: "projet-jac",
-    coverImage: "images/projects/projet-jac/Logo_jac.png",
     badges: ["Diagnostic", "Service après-vente", "Électronique"],
     stack: ["Diagnostic électronique", "Réparation de cartes", "Tests fonctionnels", "Traçabilité des interventions"],
     description: "Diagnostic et réparation de cartes électroniques utilisées dans des trancheuses à pain en grande distribution.",
@@ -228,7 +227,7 @@ export const projects = [
     badges: ["Robot autonome", "Eurobot", "ECAM"],
     stack: ["Arduino IDE", "C++", "ESP32", "Ultrasons", "Moteurs et mécanismes", "Coordination technique"],
     description: "Conception et programmation en équipe d'un robot mobile autonome pour Eurobot. Mon rôle comprend la coordination technique, l'intégration des modules embarqués et le pilotage des déplacements et mécanismes.",
-    fullDescription: "Projet académique réalisé à l'ECAM Brussels : conception et développement en équipe d'un robot mobile autonome pour la compétition Eurobot. En tant que coordinateur technique, j'ai contribué à la répartition du travail, au suivi de l'avancement et à l'intégration des fonctions électroniques et logicielles.\n\nLe code embarqué, développé avec Arduino IDE en C++, est organisé en modules pour les roues et déplacements, les commandes, les capteurs ultrasoniques, l'écran LCD, les portes et les pignons. Le programme principal orchestre une séquence d'actions de jeu et intègre un module ESP32. Le projet couvre ainsi la programmation, l'intégration du robot et la coordination technique de l'équipe.",
+    fullDescription: "Projet académique réalisé à l'ECAM Brussels : conception et développement en équipe d'un robot mobile autonome pour la compétition Eurobot. En tant que coordinateur technique, j'ai contribué à la répartition du travail, au suivi de l'avancement et à l'intégration des fonctions électroniques et logicielles. Le projet a été réalisé pour le concours Sparkoh! à Mons.\n\nLe code embarqué, développé avec Arduino IDE en C++, est organisé en modules pour les roues et déplacements, les commandes, les capteurs ultrasoniques, l'écran LCD, les portes et les pignons. Le programme principal orchestre une séquence d'actions de jeu et intègre un module ESP32. Le projet couvre ainsi la programmation, l'intégration du robot et la coordination technique de l'équipe.",
     features: [
       "Coordination technique et intégration en équipe",
       "Programmation embarquée C++ sous Arduino IDE",

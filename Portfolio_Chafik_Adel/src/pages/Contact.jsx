@@ -12,8 +12,7 @@ const coordinates = [
     href: 'https://www.linkedin.com/in/adel-chafik-b47834215/',
     external: true,
   },
-  { param: 'Téléphone', value: '+32 499 10 16 63', href: 'tel:+32499101663' },
-  { param: 'Localisation', value: 'Nivelles, Belgique' },
+  { param: 'Localisation', value: 'Belgique (Brabant wallon)' },
 ]
 
 const EMPTY_FORM = { prenom: '', nom: '', email: '', sujet: '', message: '' }
