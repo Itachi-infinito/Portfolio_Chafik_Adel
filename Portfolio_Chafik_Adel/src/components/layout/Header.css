@@ -18,7 +18,7 @@
   display: flex;
   align-items: stretch;
   color: var(--color-text);
-  min-width: 0;
+  flex-shrink: 0;
 }
 
 .cartouche__cell {
@@ -68,6 +68,7 @@
   font-weight: 500;
   color: var(--color-text);
   padding: 0.25rem 0;
+  white-space: nowrap;
   transition: color 0.15s;
 }
 .nav__link:hover { color: var(--color-accent); }
@@ -116,13 +117,13 @@
 .burger--open span:nth-child(2) { opacity: 0; }
 .burger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ≤ 1099px : case Lieu masquée */
-@media (max-width: 1099px) {
+/* ≤ 1279px : case Lieu masquée (4 cases + navigation demandent ~1200px) */
+@media (max-width: 1279px) {
   .cartouche__cell--place { display: none; }
 }
 
-/* ≤ 899px : nom + fonction empilés, menu burger */
-@media (max-width: 899px) {
+/* ≤ 1023px : nom + fonction empilés, menu burger (3 cases + navigation demandent ~960px) */
+@media (max-width: 1023px) {
   .cartouche__cell--rev { display: none; }
   .cartouche__cell--name,
   .cartouche__cell--role { padding: 0; border-right: none; }
