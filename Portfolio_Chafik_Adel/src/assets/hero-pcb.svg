@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0.28" stop-color="#000"/>
+      <stop offset="0.72" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <mask id="mask">
+      <rect width="800" height="500" fill="url(#fade)"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#mask)" stroke-linejoin="miter" stroke-linecap="butt">
+
+    <!-- Contour de carte -->
+    <path d="M420 28 H800 M420 28 V396 L452 428 H800" stroke="#16181D" stroke-width="1.5"/>
+
+    <!-- Bus A : trois pistes parallèles, en haut -->
+    <g stroke="#16181D" stroke-width="1.5">
+      <path d="M800 60 H640 L600 100 H470 L430 140 H360"/>
+      <path d="M800 76 H640 L600 116 H470 L430 156 H360"/>
+      <path d="M800 92 H640 L600 132 H470 L430 172 H360" stroke="#B4541A"/>
+    </g>
+    <!-- Pastilles de fin du bus A -->
+    <g fill="#16181D">
+      <rect x="352" y="135" width="10" height="10" rx="1"/>
+      <rect x="352" y="151" width="10" height="10" rx="1"/>
+    </g>
+    <rect x="352" y="167" width="10" height="10" rx="1" fill="#B4541A"/>
+
+    <!-- Circuit intégré (boîtier + broches) -->
+    <rect x="558" y="240" width="90" height="90" stroke="#16181D" stroke-width="1.5"/>
+    <circle cx="572" cy="254" r="3" fill="#16181D"/>
+    <g stroke="#16181D" stroke-width="10">
+      <path d="M553 250 V322" stroke-dasharray="5 9"/>
+      <path d="M653 250 V322" stroke-dasharray="5 9"/>
+      <path d="M565 235 H637" stroke-dasharray="5 9"/>
+      <path d="M565 335 H637" stroke-dasharray="5 9"/>
+    </g>
+    <text x="580" y="292" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="12" fill="#16181D">U1</text>
+
+    <!-- Pistes côté gauche du composant -->
+    <g stroke="#16181D" stroke-width="1.5">
+      <path d="M548 252.5 H500 L470 222.5 H400"/>
+      <path d="M548 266.5 H486 L456 236.5 H400"/>
+      <path d="M548 280.5 H500 L470 310.5 H400" stroke="#B4541A"/>
+      <path d="M548 294.5 H470 L440 324.5 H400"/>
+    </g>
+
+    <!-- Pistes côté droit -->
+    <g stroke="#16181D" stroke-width="1.5">
+      <path d="M658 266.5 H700 L730 296.5 H800"/>
+      <path d="M658 280.5 H684 L714 310.5 H800" stroke="#B4541A"/>
+      <path d="M658 294.5 H680 L700 314.5 V380 L724 404 H800"/>
+    </g>
+
+    <!-- Pistes vers le bas -->
+    <g stroke="#16181D" stroke-width="1.5">
+      <path d="M570.5 340 V380 L540 410 V500"/>
+      <path d="M584.5 340 V392 L560 416 V500"/>
+      <path d="M598.5 340 V400 L618 420 V500" stroke="#B4541A"/>
+    </g>
+
+    <!-- Vias -->
+    <g stroke="#16181D" stroke-width="1.5" fill="#F6F5F1">
+      <circle cx="640" cy="60" r="6"/>
+      <circle cx="600" cy="100" r="6"/>
+      <circle cx="470" cy="116" r="6"/>
+      <circle cx="500" cy="252.5" r="6"/>
+      <circle cx="700" cy="266.5" r="6"/>
+      <circle cx="700" cy="380" r="6"/>
+      <circle cx="540" cy="410" r="6"/>
+    </g>
+    <g fill="#16181D">
+      <circle cx="640" cy="60" r="2.5"/>
+      <circle cx="600" cy="100" r="2.5"/>
+      <circle cx="470" cy="116" r="2.5"/>
+      <circle cx="500" cy="252.5" r="2.5"/>
+      <circle cx="700" cy="266.5" r="2.5"/>
+      <circle cx="700" cy="380" r="2.5"/>
+      <circle cx="540" cy="410" r="2.5"/>
+    </g>
+
+    <!-- Trous de fixation -->
+    <g stroke="#16181D" stroke-width="1.5">
+      <circle cx="450" cy="58" r="9"/>
+      <circle cx="770" cy="458" r="9"/>
+    </g>
+
+    <!-- Fragment de code, côté logiciel -->
+    <g font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="11" fill="#16181D">
+      <text x="640" y="448">uint8_t reg = 0x1F;</text>
+      <text x="640" y="464">spi_write(reg, val);</text>
+      <text x="640" y="480">return STATUS_OK;</text>
+    </g>
+  </g>
+</svg>

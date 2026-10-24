@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { projects, PCB_SLUGS } from '../data/projects'
+import heroPcb from '../assets/hero-pcb.svg'
 import './Home.css'
 
 const BASE = import.meta.env.BASE_URL
@@ -26,6 +27,8 @@ const Home = () => {
   return (
     <main className="page home">
       <section className="home-hero">
+        {/* Décor : tracé de PCB très discret derrière le texte, masqué sous 900px */}
+        <img src={heroPcb} alt="" aria-hidden="true" className="home-hero__decor" />
         <div className="home-hero__text">
           <h1 className="home-hero__name">Adel Chafik</h1>
           <p className="home-hero__lead">

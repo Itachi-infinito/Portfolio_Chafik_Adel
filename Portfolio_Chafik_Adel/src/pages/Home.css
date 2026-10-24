@@ -2,7 +2,29 @@
 
 /* HERO */
 .home-hero {
+  position: relative;
+  overflow: hidden; /* le décor ne déborde pas sur le tableau */
   padding: clamp(3rem, 9vh, 6.5rem) var(--gutter) 0;
+}
+
+/* Décor PCB (src/assets/hero-pcb.svg) : en haut à droite, derrière le texte */
+.home-hero__decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  width: min(55%, 760px); /* 55 % du hero, plafonné pour tenir dans sa hauteur */
+  height: auto;
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
+.home-hero__text {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 899px) {
+  .home-hero__decor { display: none; }
 }
 
 .home-hero__name {
